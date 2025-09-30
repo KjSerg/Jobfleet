@@ -47,6 +47,9 @@
     margin: auto;
     max-height: 70vh;
     overflow: auto;
+    @media (max-height: 500px){
+      max-height: 50vh;
+    }
   }
 
   .header-lang {
@@ -76,8 +79,26 @@
     border-top: 1px solid rgba(#737373, 0.2);
   }
 
+  &__hide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    flex-shrink: 0;
+    flex-grow: 0;
+    background: none;
+    cursor: pointer;
+    path {
+      stroke:#737373;
+    }
+  }
   &__head {
     padding: 3.5rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
   }
 
   &__logo {
