@@ -1,0 +1,26 @@
+.custom-button{
+  padding: 1.5rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  border-radius: 4.4rem;
+  border: 1px solid  rgba(12, 12, 12, 0.10);
+  background: #FFF;
+  text-align: center;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2.3rem;
+  color: #0C0C0C;
+  @media (max-width: 450px) {
+    padding: 1rem;
+    font-size: 1.3rem;
+    line-height: 2.3rem;
+  }
+  &:hover{
+    color: #0C0C0C;
+    border-color: rgba(207, 161, 79, 0.30);
+    background-color: #FFFBF2;
+  }
+}

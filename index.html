@@ -6,20 +6,153 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jobfleet</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script>
+        (function () {
+            try {
+                const storedTheme = localStorage.getItem('selectedTheme');
+                const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const defaultTheme = systemPrefersDark ? 'dark' : 'light';
+                const themeToApply = storedTheme || defaultTheme;
+                document.documentElement.setAttribute('data-theme', themeToApply);
+            } catch (e) {
+                console.warn('Could not set theme from localStorage.', e);
+            }
+        })();
+    </script>
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
 <main class="content">
-    
-</main>
+    <section class="section login-section">
+        <div class="login-section-container">
+            <div class="login-section-head">
+                <a href="#" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="175" height="28" viewBox="0 0 175 28" fill="none">
+  <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M27.5347 19.28C27.5347 24.7886 24.7813 27.5429 19.2743 27.5429H0V22.0343H19.2743C21.1141 22.0343 22.0278 21.1203 22.0278 19.28V0H27.5347V19.28Z"
+        fill="#CFA14F"/>
+  <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M83.1352 27.5429V9.39917L99.1868 25.4556L103.076 21.565L87.0246 5.50858H105.163V0H77.6282V27.5429H83.1352Z"
+        fill="#0C0C0C"/>
+  <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M50.9578 20.4289C50.9578 25.4805 48.4389 28.0001 43.3888 28.0001H38.3387C33.2886 28.0001 30.7698 25.4805 30.7698 20.4289V14.4633C30.7698 9.41172 33.2886 6.89209 38.3387 6.89209H43.3888C48.4389 6.89209 50.9578 9.41172 50.9578 14.4633V20.4289ZM45.9077 20.4289V14.4633C45.9077 12.7836 45.0681 11.9437 43.3888 11.9437H38.3387C36.6595 11.9437 35.8199 12.7836 35.8199 14.4633V20.4289C35.8199 22.1086 36.6595 22.9485 38.3387 22.9485H43.3888C45.0681 22.9485 45.9077 22.1086 45.9077 20.4289Z"
+        fill="#CFA14F"/>
+  <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M74.3808 19.9717C74.3808 25.0233 71.862 27.5429 66.8119 27.5429H54.1928V0H59.2429V7.34889H66.8119C71.862 7.34889 74.3808 9.86851 74.3808 14.9201V19.9717ZM59.2306 22.4913H66.7995C68.4788 22.4913 69.3184 21.6514 69.3184 19.9717V14.9201C69.3184 13.2404 68.4788 12.4005 66.7995 12.4005H59.2306V22.5037V22.4913Z"
+        fill="#CFA14F"/>
+  <path d="M113.436 0H108.386V27.5429H113.436V0Z" fill="#0C0C0C"/>
+  <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M137.328 19.5022V14.4506C137.328 9.39901 134.76 6.87939 129.611 6.87939H124.375C119.239 6.87939 116.671 9.39901 116.671 14.4506V19.9592C116.671 25.0108 119.19 27.5304 124.24 27.5304H136.402V22.4788H124.24C122.56 22.4788 121.721 21.6389 121.721 19.9592V19.5022H137.328ZM121.721 14.463C121.721 12.7832 122.56 11.9433 124.24 11.9433H129.747C131.426 11.9433 132.266 12.7832 132.266 14.463H121.708H121.721Z"
+        fill="#0C0C0C"/>
+  <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M161.208 19.5022V14.4506C161.208 9.39901 158.64 6.87939 153.503 6.87939H148.268C143.131 6.87939 140.563 9.39901 140.563 14.4506V19.9592C140.563 25.0108 143.082 27.5304 148.132 27.5304H160.294V22.4788H148.132C146.453 22.4788 145.613 21.6389 145.613 19.9592V19.5022H161.22H161.208ZM145.601 14.463C145.601 12.7832 146.44 11.9433 148.12 11.9433H153.627C155.306 11.9433 156.145 12.7832 156.145 14.463H145.588H145.601Z"
+        fill="#0C0C0C"/>
+  <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M164.443 12.3881H167.196V27.5429H172.234V12.3881H175V7.33654H172.234V0H167.196V7.33654H164.443V12.3881Z"
+        fill="#0C0C0C"/>
+</svg>
+                </a>
+                <div class="login-section-head-container">
+                    <button class="theme-switcher">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+  <circle cx="11" cy="11" r="5.5" stroke="#0C0C0C" stroke-width="1.5"/>
+  <path d="M11 1.8335V2.75016" stroke="#0C0C0C" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M11 19.25V20.1667" stroke="#0C0C0C" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M20.1666 11L19.25 11" stroke="#0C0C0C" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M2.75 11L1.83333 11" stroke="#0C0C0C" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M17.4816 4.51855L17.1215 4.87866" stroke="#0C0C0C" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M4.8783 17.1216L4.5182 17.4817" stroke="#0C0C0C" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M17.4816 17.4814L17.1215 17.1213" stroke="#0C0C0C" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M4.8783 4.87842L4.5182 4.51832" stroke="#0C0C0C" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
+                    </button>
+                    <div class="header-lang">
+                        <span class="header-lang__title">En <span class="icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    width="12" height="6"
+                                                                                    viewBox="0 0 12 6" fill="none">
+  <path d="M10.6667 1L6.00004 5L1.33337 1" stroke="#0C0C0C" stroke-opacity="0.55" stroke-linecap="round"
+        stroke-linejoin="round"/>
+</svg></span></span>
+                        <ul>
+                            <li class="current"><img src="img/GB.svg" alt="GB">
+                                <span>English</span>
+                            </li>
+                            <li><img src="img/RS.svg" alt="RS"><a href="#">Serbian</a></li>
+                            <li><img src="img/RU.svg" alt="RU"><a href="#">Russian</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="login-section-content">
+                <div class="login-section__title dark-color">
+                    Авторизация
+                </div>
+                <div class="login-section__text">
+                    <p>
+                        Для доступа к модулю администрирования, пожалуйста, авторизуйтесь
+                    </p>
+                </div>
+                <div class="login-section-form dark-color">
+                    <form class="form" method="post">
+                        <label class="form-label ">
+                            <span class="form-label__title">Логин</span>
+                            <input placeholder="" class="" type="text" name="login" required>
+                        </label>
+                        <label class="form-label">
+                            <span class="form-label__title">Пароль</span>
+                            <span class="form-label__container">
+                                <input type="password" name="password" required>
+                                <span class="icon toggle-input-password"><img src="img/password-icon.svg" alt=""></span>
+                            </span>
+                        </label>
+                        <a class="form__link dark-color" href="#">Забыли пароль?</a>
+                        <button type="submit">Войти</button>
+                    </form>
+                    <div class="login-section-form-after">
+                        <div class="login-section-form-after__title">
+                            <span></span>
+                            <span class="">Или</span>
+                            <span></span>
+                        </div>
+                        <a href="#" class="custom-button">
+                            <span class="icon"><img src="img/google.svg" alt=""></span>
+                            Войти с Google
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="login-section-container hidden-on-mobile" style="background-color: rgba(207, 161, 79, 0.10);">
+            <div class="login-section__image">
+                <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="95" height="101" viewBox="0 0 95 101" fill="none">
+  <g clip-path="url(#clip0_668_24150)">
+    <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M55.8395 100.999H39.1602V58.2193C39.1602 50.4196 43.2761 43.2138 49.9792 39.2942L86.67 17.8945L94.9998 32.4843L64.1694 50.4592L94.9998 68.4341L86.67 83.0239L55.8395 65.049V100.999Z"
+          fill="white"/>
+    <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M8.32989 83.1043L0 68.5145L30.8304 50.5396L0 32.5647L8.32989 17.9749L39.1603 35.9498V0H55.8397V16.9059L22.3437 74.7701L8.32989 83.1043Z"
+          fill="white"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_668_24150">
+      <rect width="95" height="101" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
+                </div>
+                <img src="img/main-enter-image.png" class="" alt="">
+            </div>
+        </div>
 
+    </section>
+</main>
 </body>
 <script>
     var copiedString = '';
     var errorString = '';
+    var showPasswordImage = 'img/password-icon.svg';
+    var hidePasswordImage = 'img/eye.svg';
 </script>
 <script src="js/app.js"></script>
 </html>

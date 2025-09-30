@@ -1,0 +1,78 @@
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #0c0c0c;
+  --text-color-default: #F7F7F7;
+  --text-color-rgb: rgb(12, 12, 12);
+  --border-color-rgb: rgb(10, 10, 10, .1);
+  --border-color-rgb-7: rgb(12, 12, 12, .7);
+  --main-color: #CFA14F;
+  --light-color: #FFF1D9;
+  --dark-color: #fff;
+  --black-color: #F7F7F7;
+  --black-color-item: #FFFBF2;
+  --arrow-btn: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 18L18 6M18 6H9M18 6V15' stroke='%230C0C0C' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  --white-color: 255,255,255;
+  --arrow-link: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.5 22.5L22.5 7.5M22.5 7.5H11.25M22.5 7.5V18.75' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+}
+[data-theme="dark"] {
+  --bg-color: #0C0C0C;
+  --text-color: #ffffff;
+  --text-color-default: #0c0c0c;
+  --text-color-rgb: rgb(255, 255, 255);
+  --border-color-rgb: rgb(255, 255, 255, .1);
+  --border-color-rgb-7: rgb(255, 255, 255, .7);
+  --main-color: #CFA14F;
+  --light-color: #FFF1D9;
+  --dark-color: #171717;
+  --black-color: #070707;
+  --black-color-item: #070707;
+  --arrow-btn: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 18L18 6M18 6H9M18 6V15' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  --white-color: 12,12,12;
+  --arrow-link: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.5 22.5L22.5 7.5M22.5 7.5H11.25M22.5 7.5V18.75' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+}
+
+
+// genearl
+$white: #ffffff;
+$black: #000;
+
+// main
+
+
+$darkBlue: #0A3240;
+$secondary : #6179BF;
+$grayBackground: #04070a;
+$teamBackground: #F6FCFD;
+$default: #0E0E0F;
+$strokeOnDarkBlue: #284B57;
+$strokeOnBlue: #5FC7E1;
+$strokeOnGrayBg: #5FC7E1;
+$strokeOnWhiteGray: #5FC7E1;
+
+$yellow: #FFC01D;
+$darkBlueHover : #031E27;
+$blueHover : #15A7CC;
+$cardDarkBlue : #0F3A4A;
+
+$red: #C12716;
+
+// info
+
+$danger: #FE0000;
+$success: #1FA956;
+$info: #26badf;
+$warning: #fbf8db;
+
+// shades
+
+
+
+
+// mixins
+
+@mixin linear-gradient($direction, $fromColor, $toColor) {
+  background-color: $fromColor;
+  background-image: linear-gradient($direction, $fromColor, $toColor);
+}
+
