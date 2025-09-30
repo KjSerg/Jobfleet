@@ -1,9 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
-    document.querySelector('.theme-switcher').addEventListener('click', function (e) {
-        e.preventDefault();
-        var themeToApply = getThemeFromHtml();
-        setThemeForHtml(themeToApply);
-        saveThemeInLocalStorage(themeToApply);
+    document.querySelectorAll('.theme-switcher').forEach(function (element) {
+        element.addEventListener('click', function (e) {
+            e.preventDefault();
+            var themeToApply = getThemeFromHtml();
+            setThemeForHtml(themeToApply);
+            saveThemeInLocalStorage(themeToApply);
+        });
     });
     document.querySelectorAll('.toggle-input-password').forEach(function (element) {
         element.addEventListener('click', function (e) {

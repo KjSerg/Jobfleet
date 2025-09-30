@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jobfleet</title>
+    <script>
+        (function () {
+            try {
+                const storedTheme = localStorage.getItem('selectedTheme');
+                const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const defaultTheme = systemPrefersDark ? 'dark' : 'light';
+                const themeToApply = storedTheme || defaultTheme;
+                document.documentElement.setAttribute('data-theme', themeToApply);
+            } catch (e) {
+                console.warn('Could not set theme from localStorage.', e);
+            }
+        })();
+    </script>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<main class="content">
+    <section class="section dashboard-section">
+        <div class="sidebar">
+            <div class="sidebar__head">
+                <a href="#" class="logo sidebar__logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="146" height="23" viewBox="0 0 146 23" fill="none">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M22.972 15.8371C22.972 20.362 20.6748 22.6245 16.0804 22.6245H0V18.0996H16.0804C17.6153 18.0996 18.3776 17.3488 18.3776 15.8371V0H22.972V15.8371Z" fill="#CFA14F"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M69.36 22.6245V7.72073L82.7518 20.9099L85.9967 17.7141L72.605 4.5249H87.7377V0H64.7656V22.6245H69.36Z" fill="white"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M42.5146 16.7806C42.5146 20.9301 40.4131 22.9998 36.1999 22.9998H31.9866C27.7734 22.9998 25.6719 20.9301 25.6719 16.7806V11.8803C25.6719 7.73082 27.7734 5.66113 31.9866 5.66113H36.1999C40.4131 5.66113 42.5146 7.73082 42.5146 11.8803V16.7806ZM38.3013 16.7806V11.8803C38.3013 10.5005 37.6009 9.81065 36.1999 9.81065H31.9866C30.5856 9.81065 29.8851 10.5005 29.8851 11.8803V16.7806C29.8851 18.1604 30.5856 18.8503 31.9866 18.8503H36.1999C37.6009 18.8503 38.3013 18.1604 38.3013 16.7806Z" fill="#CFA14F"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M62.0537 16.4053C62.0537 20.5548 59.9522 22.6245 55.7389 22.6245H45.2109V0H49.4242V6.03657H55.7389C59.9522 6.03657 62.0537 8.10625 62.0537 12.2558V16.4053ZM49.4139 18.475H55.7286C57.1296 18.475 57.8301 17.7851 57.8301 16.4053V12.2558C57.8301 10.876 57.1296 10.1861 55.7286 10.1861H49.4139V18.4851V18.475Z" fill="#CFA14F"/>
+  <path d="M94.6391 0H90.4258V22.6245H94.6391V0Z" fill="white"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M114.574 16.0201V11.8706C114.574 7.72105 112.431 5.65137 108.136 5.65137H103.768C99.4825 5.65137 97.3398 7.72105 97.3398 11.8706V16.3955C97.3398 20.545 99.4413 22.6147 103.655 22.6147H113.801V18.4651H103.655C102.254 18.4651 101.553 17.7752 101.553 16.3955V16.0201H114.574ZM101.553 11.8807C101.553 10.5009 102.254 9.81102 103.655 9.81102H108.249C109.65 9.81102 110.35 10.5009 110.35 11.8807H101.543H101.553Z" fill="white"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M134.493 16.0201V11.8706C134.493 7.72105 132.351 5.65137 128.065 5.65137H123.698C119.412 5.65137 117.27 7.72105 117.27 11.8706V16.3955C117.27 20.545 119.371 22.6147 123.584 22.6147H133.731V18.4651H123.584C122.183 18.4651 121.483 17.7752 121.483 16.3955V16.0201H134.504H134.493ZM121.472 11.8807C121.472 10.5009 122.173 9.81102 123.574 9.81102H128.168C129.569 9.81102 130.27 10.5009 130.27 11.8807H121.462H121.472Z" fill="white"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M137.191 10.1759H139.489V22.6245H143.692V10.1759H145.999V6.02643H143.692V0H139.489V6.02643H137.191V10.1759Z" fill="white"/>
+</svg>
+                </a>
+            </div>
+            <nav class="sidebar-nav">
+                <ul class="sidebar-list">
+                    <li class="sidebar-list__item">
+                        <a href="#" class="sidebar-list__link">
+                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+  <path d="M12.7289 2.51001L14.4889 6.03001C14.7289 6.52002 15.3689 6.99001 15.9089 7.08001L19.0989 7.61001C21.1389 7.95001 21.6189 9.43001 20.1489 10.89L17.6689 13.37C17.2489 13.79 17.0189 14.6 17.1489 15.18L17.8589 18.25C18.4189 20.68 17.1289 21.62 14.9789 20.35L11.9889 18.58C11.4489 18.26 10.5589 18.26 10.0089 18.58L7.01893 20.35C4.87893 21.62 3.57893 20.67 4.13893 18.25L4.84893 15.18C4.97893 14.6 4.74893 13.79 4.32893 13.37L1.84893 10.89C0.388932 9.43001 0.858933 7.95001 2.89893 7.61001L6.08893 7.08001C6.61893 6.99001 7.25893 6.52002 7.49893 6.03001L9.25893 2.51001C10.2189 0.600015 11.7789 0.600015 12.7289 2.51001Z" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></span> Мои заявки
+                        </a>
+                    </li>
+                    <li class="sidebar-list__item">
+                        <a href="#" class="sidebar-list__link active">
+                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M2 22H22" stroke="#CFA14F" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M17 2H7C4 2 3 3.79 3 6V22H21V6C21 3.79 20 2 17 2Z" stroke="#CFA14F" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M7 16.5H10" stroke="#CFA14F" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M14 16.5H17" stroke="#CFA14F" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M7 12H10" stroke="#CFA14F" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M14 12H17" stroke="#CFA14F" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M7 7.5H10" stroke="#CFA14F" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M14 7.5H17" stroke="#CFA14F" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></span> Клиенты
+                        </a>
+                    </li>
+                    <li class="sidebar-list__item">
+                        <a href="#" class="sidebar-list__link">
+                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M15.75 9H8.25" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M15.75 15H8.25" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></span> Заявки
+                        </a>
+                    </li>
+                    <li class="sidebar-list__item">
+                        <a href="#" class="sidebar-list__link">
+                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M3.41016 22C3.41016 18.13 7.26018 15 12.0002 15" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18.2 21.4C19.9673 21.4 21.4 19.9673 21.4 18.2C21.4 16.4327 19.9673 15 18.2 15C16.4327 15 15 16.4327 15 18.2C15 19.9673 16.4327 21.4 18.2 21.4Z" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M22 22L21 21" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></span> Кандидаты
+                        </a>
+                    </li>
+                    <li class="sidebar-list__item">
+                        <a href="#" class="sidebar-list__link">
+                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M20.5901 22C20.5901 18.13 16.7402 15 12.0002 15C7.26015 15 3.41016 18.13 3.41016 22" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></span> Лиды
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="header-lang">
+                        <span class="header-lang__title">English <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none">
+  <path d="M12.8346 1.5L7.0013 6.5L1.16797 1.5" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></span></span>
+                    <ul>
+                        <li class="current"><img src="img/GB.svg" alt="GB">
+                            <span>English</span>
+                        </li>
+                        <li><img src="img/RS.svg" alt="RS"><a href="#">Serbian</a></li>
+                        <li><img src="img/RU.svg" alt="RU"><a href="#">Russian</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+<script>
+    var copiedString = '';
+    var errorString = '';
+    var showPasswordImage = 'img/password-icon.svg';
+    var hidePasswordImage = 'img/eye.svg';
+</script>
+<script src="js/app.js"></script>
+</html>

@@ -1,0 +1,87 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 30rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.10);
+  background: #0C0C0C;
+
+  &-list {
+    &__link {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+      padding: 2rem 2.5rem;
+      background: #0C0C0C;
+      color: #FFF;
+      font-size: 1.5rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 130%;
+
+      svg {
+        path {
+          stroke: #737373;
+        }
+      }
+
+      &:hover{
+        background: #181818;
+      }
+      &.active {
+        background: #181818;
+
+        svg {
+          path {
+            stroke: #CFA14F;
+          }
+        }
+      }
+    }
+  }
+
+  &-nav {
+    width: 100%;
+    margin: auto;
+    max-height: 70vh;
+    overflow: auto;
+  }
+
+  .header-lang {
+    width: 100%;
+    color: #737373;
+
+    a {
+      color: #fff;
+    }
+
+    ul {
+      top: auto;
+      bottom: 100%;
+      width: 100%;
+      background-color: #0C0C0C;
+    }
+
+    &__title {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+
+  &-footer {
+    padding-top: 2rem;
+    margin: auto 2.5rem 2.4rem 2.5rem;
+    border-top: 1px solid rgba(#737373, 0.2);
+  }
+
+  &__head {
+    padding: 3.5rem 2.5rem;
+  }
+
+  &__logo {
+    width: 14.6rem;
+    height: 2.3rem;
+  }
+}
