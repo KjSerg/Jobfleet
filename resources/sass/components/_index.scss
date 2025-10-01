@@ -1,9 +1,11 @@
 @import "./logo";
 @import "./form";
-@import "./modals";
 @import "./wrap";
+@import "./accordion";
 @import "./dashboard/user";
-@import "./notifications/notifications";
+@import "./modals/modals";
+@import "./modals/notifications";
+@import "./modals/filters";
 @import "./ui/theme-switcher";
 @import "./ui/header-lang";
 @import "./ui/custom-button";

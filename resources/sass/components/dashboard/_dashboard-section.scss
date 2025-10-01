@@ -63,7 +63,9 @@
     display: flex;
     width: 100%;
     min-height: 100vh;
-
+    @media (max-width: 1400px){
+      overflow: hidden;
+    }
     &--full {
       .sidebar__slide-show {
         opacity: 1;

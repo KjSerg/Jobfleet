@@ -232,9 +232,12 @@
                         <div class="clients-head__search">
                             <form class="form-search ">
                                 <label class="form-search__label">
-                                    <span class="icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M10.5417 19.2502C15.3512 19.2502 19.25 15.3513 19.25 10.5418C19.25 5.73235 15.3512 1.8335 10.5417 1.8335C5.73223 1.8335 1.83337 5.73235 1.83337 10.5418C1.83337 15.3513 5.73223 19.2502 10.5417 19.2502Z" stroke="#0C0C0C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M20.1667 20.1668L18.3334 18.3335" stroke="#0C0C0C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <span class="icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+<path d="M10.5417 19.2502C15.3512 19.2502 19.25 15.3513 19.25 10.5418C19.25 5.73235 15.3512 1.8335 10.5417 1.8335C5.73223 1.8335 1.83337 5.73235 1.83337 10.5418C1.83337 15.3513 5.73223 19.2502 10.5417 19.2502Z"
+      stroke="#0C0C0C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20.1667 20.1668L18.3334 18.3335" stroke="#0C0C0C" stroke-width="1.5" stroke-linecap="round"
+      stroke-linejoin="round"/>
 </svg>
 </span>
                                     <input type="text" name="s" placeholder="Поиск">
@@ -244,17 +247,21 @@
 
                         <div class="clients-head-controls">
                             <a href="#" class="dashboard__button dark-color">
-                                <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
 <circle cx="12" cy="12" r="10" stroke="#CFA14F" stroke-width="1.5"/>
 <path d="M15 12L12 12M12 12L9 12M12 12L12 9M12 12L12 15" stroke="#CFA14F" stroke-width="1.5" stroke-linecap="round"/>
 </svg>
 </span>
                                 Создать клиента
                             </a>
-                            <a href="#" class="dashboard__button dark-color">
-                                <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M9.5 14C11.1569 14 12.5 15.3431 12.5 17C12.5 18.6568 11.1569 20 9.5 20C7.84315 20 6.5 18.6568 6.5 17C6.5 15.3431 7.84315 14 9.5 14Z" stroke="#CFA14F" stroke-width="1.5"/>
-<path d="M14.5 3.99998C12.8431 3.99998 11.5 5.34312 11.5 6.99998C11.5 8.65683 12.8431 9.99998 14.5 9.99998C16.1569 9.99998 17.5 8.65683 17.5 6.99998C17.5 5.34312 16.1569 3.99998 14.5 3.99998Z" stroke="#CFA14F" stroke-width="1.5"/>
+                            <a href="#filters" class="dashboard__button dark-color custom-modal-open">
+                                <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+<path d="M9.5 14C11.1569 14 12.5 15.3431 12.5 17C12.5 18.6568 11.1569 20 9.5 20C7.84315 20 6.5 18.6568 6.5 17C6.5 15.3431 7.84315 14 9.5 14Z"
+      stroke="#CFA14F" stroke-width="1.5"/>
+<path d="M14.5 3.99998C12.8431 3.99998 11.5 5.34312 11.5 6.99998C11.5 8.65683 12.8431 9.99998 14.5 9.99998C16.1569 9.99998 17.5 8.65683 17.5 6.99998C17.5 5.34312 16.1569 3.99998 14.5 3.99998Z"
+      stroke="#CFA14F" stroke-width="1.5"/>
 <path d="M15 16.9585L22 16.9585" stroke="#CFA14F" stroke-width="1.5" stroke-linecap="round"/>
 <path d="M9 6.9585L2 6.9585" stroke="#CFA14F" stroke-width="1.5" stroke-linecap="round"/>
 <path d="M2 16.9585L4 16.9585" stroke="#CFA14F" stroke-width="1.5" stroke-linecap="round"/>
@@ -779,6 +786,198 @@
                 </div>
             </li>
         </ul>
+    </div>
+    <div class="notifications filters transition background-white dark-color" id="filters">
+        <a href="#filters" class="notifications-close custom-modal-close ">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+  <path d="M13 1.00005L1 13M0.999949 1L12.9999 13" stroke="#0C0C0C" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
+        </a>
+        <div class="notifications-head dark-color">Фильтры</div>
+        <form class="filters-wrap">
+            <div class="filters-head grey-color">
+                <p>Показано результатов: 12</p>
+                <button type="reset" class="red-color filters-reset">Очиcтить</button>
+            </div>
+            <ul class="filters-groups dark-color">
+                <li class="filters-group accordion">
+                    <a href="#" class="filters-group__head accordion__head dark-color">
+                        Компания
+                        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="8"
+                                                viewBox="0 0 16 8" fill="none">
+  <path d="M14.6004 0.958496L9.16706 6.39183C8.52539 7.0335 7.47539 7.0335 6.83372 6.39183L1.40039 0.958496"
+        stroke="#0C0C0C" stroke-opacity="0.55" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+        stroke-linejoin="round"/>
+</svg></span>
+                    </a>
+                    <div class=" accordion__content">
+                        <div class="filters-group__content">
+                            <label class="filters__label">
+                                <input type="checkbox" name="filter" value="1">
+                                <span><img src="img/check.svg" alt=""></span>
+                                Глобал Транс
+                            </label>
+                            <label class="filters__label">
+                                <input type="checkbox" name="filter" value="2">
+                                <span><img src="img/check.svg" alt=""></span>
+                                Экспресс Логистика
+                            </label>
+                            <label class="filters__label">
+                                <input type="checkbox" name="filter" value="3">
+                                <span><img src="img/check.svg" alt=""></span>
+                                Супер Логистика
+                            </label>
+                            <label class="filters__label">
+                                <input type="checkbox" name="filter" value="4">
+                                <span><img src="img/check.svg" alt=""></span>
+                                ТрансСервис
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li class="filters-group accordion">
+                    <a href="#" class="filters-group__head accordion__head dark-color">
+                        Компания
+                        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="8"
+                                                viewBox="0 0 16 8" fill="none">
+  <path d="M14.6004 0.958496L9.16706 6.39183C8.52539 7.0335 7.47539 7.0335 6.83372 6.39183L1.40039 0.958496"
+        stroke="#0C0C0C" stroke-opacity="0.55" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+        stroke-linejoin="round"/>
+</svg></span>
+                    </a>
+                    <div class=" accordion__content">
+                        <div class="filters-group__content">
+                            <label class="filters__label">
+                                <input type="checkbox" name="filter" value="1">
+                                <span><img src="img/check.svg" alt=""></span>
+                                Глобал Транс
+                            </label>
+                            <label class="filters__label">
+                                <input type="checkbox" name="filter" value="2">
+                                <span><img src="img/check.svg" alt=""></span>
+                                Экспресс Логистика
+                            </label>
+                            <label class="filters__label">
+                                <input type="checkbox" name="filter" value="3">
+                                <span><img src="img/check.svg" alt=""></span>
+                                Супер Логистика
+                            </label>
+                            <label class="filters__label">
+                                <input type="checkbox" name="filter" value="4">
+                                <span><img src="img/check.svg" alt=""></span>
+                                ТрансСервис
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li class="filters-group accordion">
+                    <a href="#" class="filters-group__head accordion__head dark-color">
+                        Компания
+                        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="8"
+                                                viewBox="0 0 16 8" fill="none">
+  <path d="M14.6004 0.958496L9.16706 6.39183C8.52539 7.0335 7.47539 7.0335 6.83372 6.39183L1.40039 0.958496"
+        stroke="#0C0C0C" stroke-opacity="0.55" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+        stroke-linejoin="round"/>
+</svg></span>
+                    </a>
+                    <div class=" accordion__content">
+                        <div class="filters-group__content">
+                            <label class="filters__label">
+                                <input type="checkbox" name="filter" value="1">
+                                <span><img src="img/check.svg" alt=""></span>
+                                Глобал Транс
+                            </label>
+                            <label class="filters__label">
+                                <input type="checkbox" name="filter" value="2">
+                                <span><img src="img/check.svg" alt=""></span>
+                                Экспресс Логистика
+                            </label>
+                            <label class="filters__label">
+                                <input type="checkbox" name="filter" value="3">
+                                <span><img src="img/check.svg" alt=""></span>
+                                Супер Логистика
+                            </label>
+                            <label class="filters__label">
+                                <input type="checkbox" name="filter" value="4">
+                                <span><img src="img/check.svg" alt=""></span>
+                                ТрансСервис
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li class="filters-group accordion">
+                    <a href="#" class="filters-group__head accordion__head dark-color">
+                        Компания
+                        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="8"
+                                                viewBox="0 0 16 8" fill="none">
+  <path d="M14.6004 0.958496L9.16706 6.39183C8.52539 7.0335 7.47539 7.0335 6.83372 6.39183L1.40039 0.958496"
+        stroke="#0C0C0C" stroke-opacity="0.55" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+        stroke-linejoin="round"/>
+</svg></span>
+                    </a>
+                    <div class=" accordion__content">
+                        <div class="filters-group__content">
+                            <label class="filters__label">
+                                <input type="checkbox" name="filter" value="1">
+                                <span><img src="img/check.svg" alt=""></span>
+                                Глобал Транс
+                            </label>
+                            <label class="filters__label">
+                                <input type="checkbox" name="filter" value="2">
+                                <span><img src="img/check.svg" alt=""></span>
+                                Экспресс Логистика
+                            </label>
+                            <label class="filters__label">
+                                <input type="checkbox" name="filter" value="3">
+                                <span><img src="img/check.svg" alt=""></span>
+                                Супер Логистика
+                            </label>
+                            <label class="filters__label">
+                                <input type="checkbox" name="filter" value="4">
+                                <span><img src="img/check.svg" alt=""></span>
+                                ТрансСервис
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li class="filters-group accordion">
+                    <a href="#" class="filters-group__head accordion__head dark-color">
+                        Компания
+                        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="8"
+                                                viewBox="0 0 16 8" fill="none">
+  <path d="M14.6004 0.958496L9.16706 6.39183C8.52539 7.0335 7.47539 7.0335 6.83372 6.39183L1.40039 0.958496"
+        stroke="#0C0C0C" stroke-opacity="0.55" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+        stroke-linejoin="round"/>
+</svg></span>
+                    </a>
+                    <div class=" accordion__content">
+                        <div class="filters-group__content">
+                            <label class="filters__label">
+                                <input type="checkbox" name="filter" value="1">
+                                <span><img src="img/check.svg" alt=""></span>
+                                Глобал Транс
+                            </label>
+                            <label class="filters__label">
+                                <input type="checkbox" name="filter" value="2">
+                                <span><img src="img/check.svg" alt=""></span>
+                                Экспресс Логистика
+                            </label>
+                            <label class="filters__label">
+                                <input type="checkbox" name="filter" value="3">
+                                <span><img src="img/check.svg" alt=""></span>
+                                Супер Логистика
+                            </label>
+                            <label class="filters__label">
+                                <input type="checkbox" name="filter" value="4">
+                                <span><img src="img/check.svg" alt=""></span>
+                                ТрансСервис
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <button type="submit" class="filters__button">Применить</button>
+        </form>
     </div>
 </div>
 </body>

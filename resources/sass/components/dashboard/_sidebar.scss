@@ -12,6 +12,19 @@
   border-right: 1px solid rgba(255, 255, 255, 0.10);
   background: #0C0C0C;
 
+  @media (max-width: 1400px){
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    transform: translateX(-100%);
+    transition: 0.4s ease-in-out;
+    will-change: transform;
+  }
+
+  &--showed-mobile{
+    transform: translateX(0);
+  }
+
   &__slide-show{
     position: absolute;
     top: 50%;
@@ -32,6 +45,11 @@
     path{
       stroke: #737373;
       stroke-opacity:1;
+    }
+
+    @media (max-width: 1400px){
+      opacity: 1;
+      pointer-events: auto;
     }
   }
 
