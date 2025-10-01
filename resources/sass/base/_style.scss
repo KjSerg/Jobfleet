@@ -6,54 +6,8 @@ html {
   @media (max-width: 450px) {
     font-size: 10px;
   }
-  &[data-theme="dark"]{
-    body {
-      color: rgba(255, 255, 255, 0.50);
-      background-color: #0C0C0C;
-    }
-    a{
-      color: #fff;
-    }
-    .dark-color{
-      color: #fff;
-    }
-    .header-lang{
-      ul {
-        background-color: #0C0C0C;
-      }
-    }
 
-    .theme-switcher svg > *{
-      stroke: #fff;
-    }
 
-    svg path[fill="#0C0C0C"]{
-      fill: #fff;
-    }
-    svg path[stroke="#0C0C0C"]{
-      stroke: #fff;
-    }
-
-    .form input{
-      border-color:rgba(255, 255, 255, 0.05);
-      background: #121212;
-    }
-
-    .custom-button{
-      color: #fff;
-      background: #121212;
-      border-color:rgba(255, 255, 255, 0.05);
-
-    }
-
-    input{
-      color: #fff;
-      &::placeholder{
-        color: rgba(255, 255, 255, 0.50);
-      }
-    }
-
-  }
 }
 
 
@@ -71,18 +25,17 @@ body {
 
   transition: 0.4s ease-in-out;
   will-change: transform;
+
   &.safari * {
   }
+
   @media (max-width: 450px) {
-    font-size: 1.3rem;line-height: 2.3rem;
+    font-size: 1.3rem;
+    line-height: 2.3rem;
   }
 }
 
-.dark-color{
-  color: #0C0C0C;
-  transition: 0.4s ease-in-out;
-  will-change: transform;
-}
+
 
 .body-container {
   position: relative;
@@ -103,6 +56,12 @@ main.content {
   flex: 1;
 }
 
+button{
+  cursor: pointer;
+  transition: 0.4se ease-in-out;
+  background-color: rgba(#fff, 0);
+}
+
 a {
   font-family: "Montserrat", sans-serif;
   color: rgba(12, 12, 12, 0.55);
@@ -112,7 +71,7 @@ a {
   line-height: 3rem;
 }
 
-svg > *{
+svg > * {
   transition: 0.4s ease-in-out;
   will-change: transform;
 }
@@ -245,6 +204,7 @@ section {
   & > *:not(:last-child) {
     margin-bottom: 1rem;
   }
+
   strong {
     font-weight: 600;
   }
@@ -274,9 +234,9 @@ section {
   animation: none !important;
 }
 
-.hidden-on-mobile{
+.hidden-on-mobile {
   @media (max-width: 767px) {
-    display: none!important;
+    display: none !important;
   }
 }
 

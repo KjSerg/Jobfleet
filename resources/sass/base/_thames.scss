@@ -1,0 +1,148 @@
+html {
+  &[data-theme="dark"] {
+    body {
+      color: rgba(255, 255, 255, 0.50);
+      background-color: #0C0C0C;
+    }
+
+    a {
+      color: #fff;
+    }
+
+    .dark-color {
+      color: #fff;
+    }
+
+    .header-lang {
+      ul {
+        background-color: #0C0C0C;
+      }
+    }
+
+    .theme-switcher svg > * {
+      stroke: #fff;
+    }
+
+    svg path[fill="#0C0C0C"] {
+      fill: #fff;
+    }
+
+    svg path[stroke="#0C0C0C"] {
+      stroke: #fff;
+    }
+
+    svg circle[stroke="#0C0C0C"] {
+      stroke: #fff;
+    }
+
+    .form input {
+      border-color: rgba(255, 255, 255, 0.05);
+      background: #121212;
+    }
+
+    .custom-button {
+      color: #fff;
+      background: #121212;
+      border-color: rgba(255, 255, 255, 0.05);
+
+    }
+
+    input {
+      color: #fff;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.50);
+      }
+    }
+
+    .background {
+      &-white {
+        background-color: #0C0C0C;
+      }
+
+      &-grey {
+
+        background-color: #0C0C0C;
+      }
+    }
+
+    .dashboard-head {
+      border-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .grey-color {
+      color: rgba(255, 255, 255, 0.50);
+    }
+
+    .notifications-button {
+      border: 1px solid rgba(255, 255, 255, 0.05);
+
+      background: #171717;
+
+      &:after {
+        border-color: #000;
+      }
+    }
+
+    .red-color {
+      color: #EB5757;
+    }
+
+    input{
+      border-color: rgba(255, 255, 255, 0.05);
+      background: #121212;
+      color: #fff;
+    }
+
+    .wrap {
+      border-color: rgba(255, 255, 255, 0.05);
+
+      &-head {
+        border-color: rgba(255, 255, 255, 0.05);
+      }
+    }
+
+    .dashboard__button{
+      border-color: rgba(207, 161, 79, 0.50);
+      background: rgba(255, 251, 242, 0.10);
+      &:hover {
+        background: #CFA14F;
+      }
+    }
+  }
+}
+
+.grey-color {
+  color: rgba(12, 12, 12, 0.55);
+  transition: 0.4s ease-in-out;
+  will-change: transform;
+}
+
+.dark-color {
+  color: #0C0C0C;
+  transition: 0.4s ease-in-out;
+  will-change: transform;
+}
+
+.red-color {
+  color: #EB5757;
+}
+
+.transition {
+  transition: 0.4s ease-in-out;
+  will-change: transform;
+}
+
+.background {
+
+
+  &-white {
+    background-color: #fff;
+
+  }
+
+  &-grey {
+
+    background-color: #F7F7F7;
+  }
+}

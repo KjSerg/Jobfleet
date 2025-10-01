@@ -1,18 +1,20 @@
-document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.theme-switcher').forEach(function (element) {
+const doc = document;
+let duration = 400;
+doc.addEventListener('DOMContentLoaded', function () {
+    doc.querySelectorAll('.theme-switcher').forEach(function (element) {
         element.addEventListener('click', function (e) {
             e.preventDefault();
-            var themeToApply = getThemeFromHtml();
+            let themeToApply = getThemeFromHtml();
             setThemeForHtml(themeToApply);
             saveThemeInLocalStorage(themeToApply);
         });
     });
-    document.querySelectorAll('.toggle-input-password').forEach(function (element) {
+    doc.querySelectorAll('.toggle-input-password').forEach(function (element) {
         element.addEventListener('click', function (e) {
             e.preventDefault();
-            var label = element.closest('label');
-            var input = label.querySelector('input');
-            var icon = label.querySelector('img');
+            let label = element.closest('label');
+            let input = label.querySelector('input');
+            let icon = label.querySelector('img');
             if (input.getAttribute('type') === 'password') {
                 input.setAttribute('type', 'text');
                 icon.setAttribute('src', hidePasswordImage);
@@ -21,16 +23,135 @@ document.addEventListener('DOMContentLoaded', function () {
                 icon.setAttribute('src', showPasswordImage);
             }
         });
-    })
+    });
+    doc.querySelectorAll('.custom-modal-open').forEach(function (element) {
+        element.addEventListener('click', function (e) {
+            e.preventDefault();
+            const href = element.getAttribute('href');
+            if (href === '#') return;
+            if (href === '') return;
+            if (href === undefined) return;
+            const queriedElement = _$(href);
+            if (queriedElement === null) return;
+            queriedElement.classList.add('custom-modal-active');
+            _$('body').classList.add('open-custom-modal');
+        });
+    });
+    doc.querySelectorAll('.custom-modal-close').forEach(function (element) {
+        element.addEventListener('click', function (e) {
+            e.preventDefault();
+            const href = element.getAttribute('href') || '';
+            const test = ['', '#', undefined, null].includes(href);
+            if (test) {
+                removeClassFromElements('.custom-modal-active', 'custom-modal-active');
+                _$('body').classList.remove('open-custom-modal');
+            } else {
+                const queriedElement = _$(href);
+                if (queriedElement === null) return;
+                queriedElement.classList.remove('custom-modal-active');
+                _$('body').classList.remove('open-custom-modal');
+            }
+
+        });
+    });
+    doc.querySelectorAll('.custom-modals').forEach(function (element) {
+        element.addEventListener('click', function (e) {
+            e.preventDefault();
+            if(!e.target.classList.contains('custom-modals')) return;
+            removeClassFromElements('.custom-modal-active', 'custom-modal-active');
+            _$('body').classList.remove('open-custom-modal');
+        });
+    });
+    doc.querySelectorAll('.sidebar__slide-hide').forEach(function (element) {
+        element.addEventListener('click', function (e) {
+            e.preventDefault();
+            const sidebar = _$('.sidebar');
+            const section = sidebar.closest('.dashboard-section');
+            slideLeft(sidebar, duration);
+            section.classList.add('dashboard-section--full');
+        });
+    });
+    doc.querySelectorAll('.sidebar__slide-show').forEach(function (element) {
+        element.addEventListener('click', function (e) {
+            e.preventDefault();
+            const sidebar = _$('.sidebar');
+            const section = sidebar.closest('.dashboard-section');
+            slideRight(sidebar, duration);
+            section.classList.remove('dashboard-section--full');
+        });
+    });
 });
 
 
+function slideRight(element, duration = 400) {
+    element.classList.add('animation-execution');
+    element.style.removeProperty('display');
+    let display = window.getComputedStyle(element).display;
+
+    if (display === 'none') {
+        element.style.display = 'block';
+    }
+
+    let w = element.offsetWidth;
+    element.style.overflow = 'hidden';
+    element.style.width = 0;
+
+    console.log(w)
+    setTimeout(() => {
+        element.style.transition = `width ${duration}ms ease`;
+        element.style.width = w + 'px';
+    }, 10);
+
+    setTimeout(() => {
+        element.style.removeProperty('width');
+        element.style.removeProperty('overflow');
+        element.style.removeProperty('transition');
+        element.classList.remove('animation-execution');
+    }, duration);
+}
+
+function slideLeft(element, duration = 400) {
+    element.classList.add('animation-execution');
+    element.style.width = element.offsetWidth + 'px';
+    element.style.overflow = 'hidden';
+    element.style.transition = `width ${duration}ms ease`;
+
+    setTimeout(() => {
+        element.style.width = 0;
+    }, 10);
+
+    setTimeout(() => {
+        element.style.display = 'none';
+        element.style.removeProperty('width');
+        element.style.removeProperty('overflow');
+        element.style.removeProperty('transition');
+        element.classList.remove('animation-execution');
+    }, duration);
+}
+
+function removeClassFromElements(selector, cssClass) {
+    doc.querySelectorAll(selector).forEach(function (element) {
+        element.classList.remove(cssClass);
+    });
+}
+
+function addClassToElements(selector, cssClass) {
+    doc.querySelectorAll(selector).forEach(function (element) {
+        element.classList.add(cssClass);
+    });
+}
+
+function _$(selector) {
+    return doc.querySelector(selector);
+}
+
+
 function setThemeForHtml(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
+    doc.documentElement.setAttribute('data-theme', theme);
 }
 
 function getThemeFromHtml() {
-    var themeSelected = document.querySelector('html').getAttribute('data-theme');
+    let themeSelected = _$('html').getAttribute('data-theme');
     return themeSelected === 'dark' ? 'light' : 'dark';
 }
 

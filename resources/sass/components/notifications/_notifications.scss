@@ -1,0 +1,301 @@
+.notifications {
+  &-button {
+    position: relative;
+    display: flex;
+    width: 4.8rem;
+    height: 4.8rem;
+    padding: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 1px solid rgba(10, 10, 10, 0.10);
+    background: #F7F7F7;
+
+    &:after {
+      position: absolute;
+      display: block;
+      content: '';
+      top: -2px;
+      right: -2px;
+      width: 1rem;
+      height: 1rem;
+      border: 3px solid #fff;
+      background-color: #CFA14F;
+      border-radius: 50%;
+      opacity: 0;
+      transition: 0.4s ease-in-out;
+    }
+
+    &--message {
+      &:after {
+        opacity: 1;
+      }
+    }
+
+    &:hover {
+      background-color: #fff;
+    }
+  }
+
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  top: 0;
+  width: 100%;
+  max-width: 58rem;
+  height: 100vh;
+  overflow: auto;
+  transform: translateX(100%);
+
+  &.custom-modal-active {
+    transform: translateX(0);
+  }
+
+  &-close {
+    position: absolute;
+    z-index: 1;
+    top: 2rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    flex-shrink: 0;
+    flex-grow: 0;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    @media (max-width: 450px){
+      top: 1.6rem;
+      right: 1.6rem;
+    }
+    &:hover {
+      transform: rotate(90deg);
+    }
+  }
+
+  &-head {
+    padding: 3.6rem;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 3.7rem;
+    @media (max-width: 450px){
+      padding: 1.6rem 5rem 1.6rem 1.6rem;
+      font-size: 2.1rem;
+      line-height: 3.2rem;
+    }
+  }
+
+  &-list {
+    border-top: 1px solid rgba(12, 12, 12, 0.10);
+
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: 2.4rem;
+      padding: 2rem 3.6rem;
+      border-bottom: 1px solid rgba(12, 12, 12, 0.10);
+
+
+      @media (max-width: 450px){
+        padding: 1.6rem;
+        align-items: flex-start;
+        gap: 1.2rem;
+      }
+
+      &__column {
+        width: 100%;
+        max-width: 46rem;
+      }
+
+      &__button {
+        display: inline-flex;
+        gap: 1.2rem;
+        align-items: center;
+        justify-content: flex-start;
+        color: #CFA14F;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 2.3rem;
+        .icon{
+          width: 2.4rem;
+          height: 2.4rem;
+          @media (max-width: 450px){
+            height: 1.8rem;
+            width:  1.8rem;
+          }
+        }
+        @media (max-width: 450px){
+          gap: 4px;
+          font-size: 1.3rem;
+          line-height: 2.3rem;
+        }
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      &__text {
+        &:not(:last-child) {
+          margin-bottom: 1.2rem;
+          @media (max-width: 450px){
+            margin-bottom: 0.8rem;
+          }
+        }
+
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 2.6rem;
+        @media (max-width: 450px){
+          font-size: 1.3rem;
+          line-height: 2.3rem;
+        }
+      }
+
+      &__subtitle {
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 2.6rem;
+        @media (max-width: 450px){
+          font-size: 1.3rem;
+          line-height: 2.3rem;
+        }
+      }
+
+      &__title {
+        position: relative;
+        display: inline-block;
+        font-size: 1.7rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 2.5rem;
+        &:not(:last-child) {
+          margin-bottom: 1.2rem;
+          @media (max-width: 450px){
+            margin-bottom: 0.8rem;
+          }
+        }
+        &:after{
+          position: absolute;
+          display: block;
+          content: '';
+          left: calc(100% + 1rem);
+          top: 0.8rem;
+          background-color:  #CFA14F;
+          width: 0.8rem;
+          height: 0.8rem;
+          flex-shrink: 0;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+          opacity: 0;
+
+          @media (max-width: 450px){
+            left: 0;
+          }
+        }
+        @media (max-width: 450px){
+
+          font-size: 1.5rem;
+          line-height: 2.5rem;
+        }
+      }
+
+      &__head {
+        margin-bottom: 1.2rem;
+      }
+
+      &-options {
+        width: 20rem;
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        right: 0;
+        border: 1px solid rgba(12, 12, 12, 0.10);
+        border-radius: 0.8rem;
+        box-shadow: 0 46px 13px 0 rgba(83, 96, 127, 0.00), 0 29px 12px 0 rgba(83, 96, 127, 0.01), 0 17px 10px 0 rgba(83, 96, 127, 0.03), 0 7px 7px 0 rgba(83, 96, 127, 0.04), 0 2px 4px 0 rgba(83, 96, 127, 0.05);
+        transition: 0.2s ease-in-out;
+        opacity: 0;
+        pointer-events: none;
+        li{
+          border-bottom: 1px solid rgba(12, 12, 12, 0.10);
+        }
+      }
+
+      &-controls {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        aspect-ratio: 1/1;
+        flex-grow: 0;
+        flex-shrink: 0;
+
+        &:hover{
+          .notifications-list-item-options{
+            opacity: 1;
+            pointer-events: auto;
+          }
+        }
+
+        &__dots {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-grow: 0;
+          flex-shrink: 0;
+        }
+      }
+
+      &__option{
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        padding: 1.2rem 1.6rem;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 2.6rem;
+        .icon{
+          width: 2.4rem;
+          height: 2.4rem;
+          @media (max-width: 450px){
+            width: 2.2rem;
+            height: 2.2rem;
+          }
+        }
+        @media (max-width: 450px){
+          padding: 1.2rem;
+          font-size: 1.3rem;
+          line-height: 2.3rem;
+        }
+        &:hover{
+          background-color: rgba(#cecece, 0.5);
+        }
+      }
+
+      &.unread{
+        background-color: #FFFBF2;
+
+        .notifications-list-item__title{
+          @media (max-width: 450px){
+            padding-left: 2rem;
+          }
+          &:after{
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+
+}
