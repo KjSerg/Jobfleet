@@ -91,7 +91,9 @@
       border: 1px solid rgba(#0C0C0C, 0.1);
       border-radius: 6px;
       cursor: pointer;
-
+      img{
+        opacity: 0;
+      }
     }
 
     input[type='checkbox'], input[type='radio'] {
@@ -99,6 +101,9 @@
 
       &:checked + span {
         background-color: #CFA14F;
+        img{
+          opacity: 1;
+        }
       }
     }
   }
