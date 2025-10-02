@@ -1,7 +1,8 @@
 const doc = document;
 let duration = 400;
-let windowWidthReconfiguration = 1400;
+let windowWidthReconfiguration = 1450;
 doc.addEventListener('DOMContentLoaded', function () {
+    tableRowsCheckboxInit();
     doc.querySelectorAll('.theme-switcher').forEach(function (element) {
         element.addEventListener('click', function (e) {
             e.preventDefault();
@@ -67,8 +68,9 @@ doc.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
             const sidebar = _$('.sidebar');
             const windowOuterWidth = window.outerWidth;
-            if(windowOuterWidth <= windowWidthReconfiguration){
+            if (windowOuterWidth <= windowWidthReconfiguration) {
                 sidebar.classList.remove('sidebar--showed-mobile');
+                _$('body').classList.remove('open-sidebar');
                 return;
             }
             if (sidebar.classList.contains('sidebar--hidden')) return;
@@ -83,8 +85,9 @@ doc.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
             const sidebar = _$('.sidebar');
             const windowOuterWidth = window.outerWidth;
-            if(windowOuterWidth <= windowWidthReconfiguration){
+            if (windowOuterWidth <= windowWidthReconfiguration) {
                 sidebar.classList.add('sidebar--showed-mobile');
+                _$('body').classList.add('open-sidebar');
                 return;
             }
             if (!sidebar.classList.contains('sidebar--hidden')) return;
@@ -94,21 +97,56 @@ doc.addEventListener('DOMContentLoaded', function () {
             section.classList.remove('dashboard-section--full');
         });
     });
+    doc.querySelectorAll('.open-sidebar-js').forEach(function (element) {
+        element.addEventListener('click', function (e) {
+            e.preventDefault();
+            const sidebar = _$('.sidebar');
+            if(_$('body').classList.contains('open-sidebar')){
+                element.classList.remove('active');
+                sidebar.classList.remove('sidebar--showed-mobile');
+                _$('body').classList.remove('open-sidebar');
+            }else {
+                element.classList.add('active');
+                sidebar.classList.add('sidebar--showed-mobile');
+                _$('body').classList.add('open-sidebar');
+            }
+
+        });
+    });
     doc.querySelectorAll('.accordion__head').forEach(function (element) {
         element.addEventListener('click', function (e) {
             e.preventDefault();
             const wrapper = element.closest('.accordion');
             const content = wrapper.querySelector('.accordion__content');
-            if(wrapper.classList.contains('active')){
+            if (wrapper.classList.contains('active')) {
                 wrapper.classList.remove('active');
                 slideUp(content, duration)
-            }else {
+            } else {
                 wrapper.classList.add('active');
                 slideDown(content, duration)
             }
         });
     });
 });
+
+function tableRowsCheckboxInit() {
+    doc.querySelectorAll('.select-all-rows').forEach(function (mainCheckbox) {
+        const section = mainCheckbox.closest('.dashboard-section');
+        const checkboxes = section.querySelectorAll('.checkbox-row[type="checkbox"]');
+        mainCheckbox.addEventListener('change', function (e) {
+            const isChecked = mainCheckbox.checked;
+            checkboxes.forEach(function (input) {
+                input.checked = isChecked;
+            });
+        });
+        checkboxes.forEach(function (input) {
+            input.addEventListener('change', function (e) {
+                const checkboxesChecked = section.querySelectorAll('.checkbox-row[type="checkbox"]:checked');
+                mainCheckbox.checked = checkboxesChecked.length === checkboxes.length;
+            });
+        });
+    });
+}
 
 
 function slideDown(element, duration = 400) {

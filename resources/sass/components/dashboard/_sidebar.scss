@@ -12,7 +12,7 @@
   border-right: 1px solid rgba(255, 255, 255, 0.10);
   background: #0C0C0C;
 
-  @media (max-width: 1400px){
+  @media (max-width: 1450px) {
     position: absolute;
     left: 0;
     z-index: 1;
@@ -21,11 +21,15 @@
     will-change: transform;
   }
 
-  &--showed-mobile{
+  @media (max-width: 767px) {
+    position: fixed;
+  }
+
+  &--showed-mobile {
     transform: translateX(0);
   }
 
-  &__slide-show{
+  &__slide-show {
     position: absolute;
     top: 50%;
     left: 0;
@@ -42,14 +46,18 @@
     transition: 0.4s ease-in-out;
     opacity: 0;
     pointer-events: none;
-    path{
+
+    path {
       stroke: #737373;
-      stroke-opacity:1;
+      stroke-opacity: 1;
     }
 
-    @media (max-width: 1400px){
+    @media (max-width: 1450px) {
       opacity: 1;
       pointer-events: auto;
+    }
+    @media (max-width: 767px) {
+      display: none;
     }
   }
 
@@ -59,6 +67,11 @@
     margin: 0 1.6rem;
     border-bottom: 1px solid rgba(#737373, 0.2);
     color: #fff;
+    @media (max-width: 767px) {
+      display: flex;
+      margin-top: auto;
+    }
+
     .user {
       padding-top: 1.6rem;
       padding-bottom: 1.6rem;
@@ -77,6 +90,15 @@
       font-style: normal;
       font-weight: 600;
       line-height: 130%;
+
+      .icon{
+        width: 2.2rem;
+        height: 2.2rem;
+      }
+
+      @media (max-width: 767px) {
+        padding: 2rem 1.6rem;
+      }
 
       svg {
         path {
@@ -103,12 +125,13 @@
   &-nav {
     width: 100%;
     margin: auto;
-    max-height: 70vh;
+    padding-bottom: 2rem;
 
     transition: 0.2s ease-in-out;
-    @media (max-height: 500px) {
-      max-height: 50vh;
+    @media (max-width: 767px) {
+      margin-top: 0;
     }
+
   }
 
   .header-lang {
@@ -138,7 +161,7 @@
     border-top: 1px solid rgba(#737373, 0.2);
   }
 
-  &-hide{
+  &-hide {
 
     display: flex;
     align-items: center;
@@ -162,14 +185,17 @@
     flex-grow: 0;
     cursor: pointer;
     transition: 0.4s ease-in-out;
-    &:hover{
+
+    &:hover {
       transform: scale(1.1);
     }
-    path{
+
+    path {
       stroke: #737373;
-      stroke-opacity:1;
+      stroke-opacity: 1;
     }
   }
+
   &__hide {
     display: none;
     align-items: center;
@@ -199,14 +225,19 @@
     height: 2.3rem;
   }
 
-  &.animation-execution{
-    .sidebar-nav{
+  &.animation-execution {
+    .sidebar-nav {
       opacity: 0;
 
       transition: 0.1s ease-in-out;
     }
+
     & > * {
-      overflow: hidden!important;
+      overflow: hidden !important;
     }
   }
+}
+
+body.open-sidebar {
+  overflow: hidden;
 }

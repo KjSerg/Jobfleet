@@ -124,3 +124,51 @@ input{
     }
   }
 }
+
+.form {
+  &-search {
+    width: 100%;
+    input{
+
+      padding-left: 4.8rem;
+    }
+    .icon{
+      position: absolute;
+      left: 1.6rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      width: 2.2rem;
+      height: 2.2rem;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+      aspect-ratio: 1/1;
+    }
+    &__label {
+      position: relative;
+      display: block;
+      width: 100%;
+    }
+  }
+
+}
+
+input {
+  display: flex;
+  width: 100%;
+  padding: 1.2rem 2.4rem;
+  border-radius: 1.2rem;
+  border: 1px solid rgba(10, 10, 10, 0.10);
+  background: #F7F7F7;
+  color: rgba(12, 12, 12, 0.55);
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.8rem;
+  font-family: "Montserrat", sans-serif;
+
+  &::placeholder{
+    color: rgba(12, 12, 12, 0.55);
+  }
+}

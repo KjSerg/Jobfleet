@@ -112,6 +112,16 @@ html {
     .filters__label span {
       background: #121212;
     }
+    .checkbox span {
+      background: #121212;
+    }
+    .clients-table-body{
+      .clients-table-row{
+        &:nth-child(odd){
+          background: #121212;
+        }
+      }
+    }
   }
 }
 

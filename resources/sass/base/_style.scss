@@ -1,7 +1,10 @@
 html {
   font-size: 10px;
-  @media (max-width: 1700px) {
+  @media (max-width: 1900px) {
     font-size: 9px;
+  }
+  @media (max-width: 1200px) {
+    font-size: 8px;
   }
   @media (max-width: 450px) {
     font-size: 10px;
@@ -29,12 +32,13 @@ body {
   &.safari * {
   }
 
+
+
   @media (max-width: 450px) {
     font-size: 1.3rem;
     line-height: 2.3rem;
   }
 }
-
 
 
 .body-container {
@@ -56,10 +60,11 @@ main.content {
   flex: 1;
 }
 
-button{
+button {
   cursor: pointer;
   transition: 0.4s ease-in-out;
-  background-color: rgba(#fff, 0);font-family: "Montserrat", sans-serif;
+  background-color: rgba(#fff, 0);
+  font-family: "Montserrat", sans-serif;
 }
 
 a {
@@ -239,6 +244,71 @@ section {
     display: none !important;
   }
 }
+
+.checkbox {
+  position: relative;
+  width: 2.4rem;
+  height: 2.4rem;
+  flex-grow: 0;
+  flex-shrink: 0;
+  &__label{
+    margin-bottom: 2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 1.2rem;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2.6rem;
+    user-select: none;
+    @media (max-width: 450px) {
+      margin-bottom: 1.4rem;
+      font-size: 1.3rem;
+      line-height: 2.3rem;
+    }
+  }
+  span {
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    border: 1px solid rgba(#0C0C0C, 0.1);
+    border-radius: 6px;
+    cursor: pointer;
+
+    img {
+      opacity: 0;
+    }
+  }
+
+  input[type='checkbox'] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+    cursor: pointer;
+    &:checked + span {
+      background-color: #CFA14F;
+
+      img {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
 
 @keyframes show {
   0% {

@@ -1,0 +1,52 @@
+.header {
+  padding: 1.8rem 1.6rem;
+  border-bottom: 1px solid rgba(211, 223, 236, 0.20);
+  background: #0C0C0C;
+  &-mobile{
+    display: none;
+    @media (max-width: 767px) {
+      display: block;
+    }
+  }
+  &__notifications-button{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.8rem;
+    height: 2.8rem;
+    flex-shrink: 0;
+    flex-grow: 0;
+    aspect-ratio: 1/1;
+    &:after{
+      position: absolute;
+      display: block;
+      content: '';
+      top: -4px;
+      right: -4px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #CFA14F;
+      opacity: 0;
+    }
+    &--message{
+      &:after{
+        opacity: 1;
+      }
+
+    }
+  }
+  &__logo{
+    width: 12.7rem;
+    height: 2rem;
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin-right: auto;
+  }
+  &-container{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+}
