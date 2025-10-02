@@ -1,0 +1,32 @@
+.company{
+  &-details{
+    display: flex;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2.6rem;
+    a{
+
+      font-size: 1.5rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 2.6rem;
+    }
+    &__title{
+      width: 100%;
+    }
+    &-column{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 1.2rem;
+    }
+  }
+  &-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+}

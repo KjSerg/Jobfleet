@@ -39,6 +39,20 @@
     }
   }
 
+  &__back-link{
+    margin-left: 1rem;
+    display: inline-flex;
+    gap: 1.5rem;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.3rem;
+    .icon{
+      width: 2.3rem;
+      height: 2.3rem;
+    }
+  }
+
   &-head {
     display: flex;
     align-items: center;
