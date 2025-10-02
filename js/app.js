@@ -148,7 +148,6 @@ function tableRowsCheckboxInit() {
     });
 }
 
-
 function slideDown(element, duration = 400) {
     element.style.removeProperty('display');
     let display = window.getComputedStyle(element).display;

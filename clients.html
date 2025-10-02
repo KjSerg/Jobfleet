@@ -298,7 +298,8 @@
 </span>
                                 Создать клиента
                             </a>
-                            <a href="#filters" class="dashboard__button clients-dashboard__button dark-color custom-modal-open">
+                            <a href="#filters"
+                               class="dashboard__button clients-dashboard__button dark-color custom-modal-open">
                                 <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
 <path d="M9.5 14C11.1569 14 12.5 15.3431 12.5 17C12.5 18.6568 11.1569 20 9.5 20C7.84315 20 6.5 18.6568 6.5 17C6.5 15.3431 7.84315 14 9.5 14Z"
@@ -707,6 +708,45 @@
                             </div>
                         </div>
                     </div>
+                    <form class="pagination clients-pagination form-pagination dark-color">
+                        <div class="pagination-wrap">
+                            <a href="#" class="pagination__prev">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewBox="0 0 9 16"
+                                     fill="none">
+  <path d="M7.54163 14.5999L2.10829 9.16657C1.46663 8.5249 1.46663 7.4749 2.10829 6.83324L7.54163 1.3999"
+        stroke="#0C0C0C" stroke-opacity="0.55" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+        stroke-linejoin="round"/>
+</svg>
+                            </a>
+                            <p class="hidden-on-mobile">Страница</p>
+                            <label class="pagination__label">
+                                <input type="number" value="1">
+                            </label>
+                            <p>из 25</p>
+                            <a href="#" class="pagination__next">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewBox="0 0 9 16"
+                                    fill="none">
+  <path d="M1.45837 14.5999L6.89171 9.16657C7.53337 8.5249 7.53337 7.4749 6.89171 6.83324L1.45837 1.3999"
+        stroke="#0C0C0C" stroke-opacity="0.55" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+        stroke-linejoin="round"/>
+</svg>
+                            </a>
+                        </div>
+                        <div class="pagination-wrap hidden-on-mobile">
+                            <p>Кол-во строк:</p>
+                            <label class="custom-select dark-color ">
+                                <select class="main-select" name="posts_per_page" id="posts_per_page">
+                                    <option>5</option>
+                                    <option selected>10</option>
+                                    <option >15</option>
+                                    <option>20</option>
+                                </select>
+                                <span class="icon custom-select__icon"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="7" viewBox="0 0 13 7" fill="none">
+  <path d="M1.54995 1.09375L5.62495 5.16875C6.1062 5.65 6.8937 5.65 7.37495 5.16875L11.45 1.09375" stroke="#0C0C0C" stroke-opacity="0.55" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></span>
+                            </label>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -1419,5 +1459,6 @@
     var showPasswordImage = 'img/password-icon.svg';
     var hidePasswordImage = 'img/eye.svg';
 </script>
+<script src="js/main-select.js"></script>
 <script src="js/app.js"></script>
 </html>
