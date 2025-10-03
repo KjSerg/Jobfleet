@@ -55,6 +55,8 @@ addEventListener("DOMContentLoaded", (event) => {
 window.addEventListener('resize', removeActiveClass);
 window.addEventListener('scroll', removeActiveClass);
 
+
+
 function setSelectOption(option) {
     var selectID = option.getAttribute('data-select');
     var index = option.getAttribute('data-index');
@@ -100,7 +102,6 @@ function toggleOptionsVisibility(target) {
         var left = rect.left;
         var width = rect.width;
         var height = rect.height;
-        console.log(rect)
         el.classList.add('active');
         el.style.left = left + 'px';
         el.style.top = (top + height) + 'px';
@@ -109,12 +110,42 @@ function toggleOptionsVisibility(target) {
         var rectOptionsHeight = rectOptions.height;
         var lastPixel = height + top + rectOptionsHeight;
         lastPixel = lastPixel + 50;
-        return;
         if (lastPixel > windowHeight) {
             el.style.top = (top - rectOptionsHeight) + 'px';
             el.classList.add('active-top');
         }
     }
+}
+
+function getElementPositionRelativeToDocument(element) {
+    const rect = element.getBoundingClientRect();
+    const scrollX = window.scrollX || window.pageXOffset;
+    const scrollY = window.scrollY || window.pageYOffset;
+
+    return {
+        top: rect.top + scrollY,
+        left: rect.left + scrollX,
+        right: rect.right + scrollX,
+        bottom: rect.bottom + scrollY,
+        width: rect.width,
+        height: rect.height
+    };
+}
+
+
+function getBodyHeight(){
+    const body = document.body;
+    const html = document.documentElement;
+
+    const height = Math.max(
+        body.scrollHeight,
+        body.offsetHeight,
+        html.clientHeight,
+        html.scrollHeight,
+        html.offsetHeight
+    );
+
+    return height;
 }
 
 function removeActiveClass() {
@@ -133,6 +164,19 @@ function wrapSelect(element, ID) {
     wrapper.setAttribute('id', ID);
     element.parentNode.insertBefore(wrapper, element);
     wrapper.appendChild(element);
+    wrapCustomSelectAndAddIcon(wrapper);
+}
+function wrapCustomSelectAndAddIcon(element) {
+    if(element.closest('.custom-select') !== null) return;
+    var wrapper = document.createElement('div');
+    wrapper.classList.add('custom-select');
+    element.parentNode.insertBefore(wrapper, element);
+    wrapper.appendChild(element);
+    var iconWrap = document.createElement('span');
+    iconWrap.classList.add('icon');
+    iconWrap.classList.add('custom-select__icon');
+    iconWrap.innerHTML = customSelectIconSvg;
+    wrapper.appendChild(iconWrap);
 }
 
 function getCustomOptionsHTML(optionsData, args = {}) {

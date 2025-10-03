@@ -13,6 +13,11 @@
   font-weight: 600;
   line-height: 2.3rem;
   color: #0C0C0C;
+  &--gold{
+    border: 1px solid rgba(207, 161, 79, 0.10);
+    background: #CFA14F;
+    color: #fff;
+  }
   @media (max-width: 450px) {
     padding: 1rem;
     font-size: 1.3rem;

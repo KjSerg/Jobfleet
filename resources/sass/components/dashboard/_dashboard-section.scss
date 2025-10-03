@@ -2,26 +2,30 @@
   &__button {
     display: inline-flex;
     align-items: center;
-    justify-content: center;gap: 1rem;
+    justify-content: center;
+    gap: 1rem;
     padding: 1.2rem 2rem;
     border-radius: 4.4rem;
-    border: 1px solid  rgba(207, 161, 79, 0.30);
-    background:  #FFFBF2;
+    border: 1px solid rgba(207, 161, 79, 0.30);
+    background: #FFFBF2;
 
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 600;
     line-height: 2.3rem;
-    svg{
-      path{
+
+    svg {
+      path {
         transition: 0.4s ease-in-out;
       }
     }
-    &:hover{
+
+    &:hover {
       color: #fff;
-      background:  #CFA14F;
-      svg{
-        path{
+      background: #CFA14F;
+
+      svg {
+        path {
           stroke: #fff;
         }
       }
@@ -33,13 +37,13 @@
     font-style: normal;
     font-weight: 700;
     line-height: 3.5rem;
-    @media (max-width: 767px){
+    @media (max-width: 767px) {
       font-size: 2.1rem;
       line-height: 3.1rem;
     }
   }
 
-  &__back-link{
+  &__back-link {
     margin-left: 1rem;
     display: inline-flex;
     gap: 1.5rem;
@@ -47,10 +51,11 @@
     font-style: normal;
     font-weight: 600;
     line-height: 2.3rem;
-    @media (max-width: 767px){
-      margin-left:0;
+    @media (max-width: 767px) {
+      margin-left: 0;
     }
-    .icon{
+
+    .icon {
       width: 2.3rem;
       height: 2.3rem;
     }
@@ -70,7 +75,7 @@
       align-items: center;
       justify-content: center;
       gap: 2.4rem;
-      @media (max-width: 767px){
+      @media (max-width: 767px) {
         display: none;
       }
     }
@@ -87,13 +92,31 @@
     display: flex;
     width: 100%;
     min-height: 100vh;
-    @media (max-width: 1400px){
+    @media (max-width: 1400px) {
       overflow: hidden;
     }
+
     &--full {
       .sidebar__slide-show {
         opacity: 1;
         pointer-events: auto;
+      }
+    }
+  }
+
+  &-subhead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1.2rem 2.4rem;
+    &__title{
+      font-size: 1.9rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 2.9rem;
+      @media (max-width: 450px){
+        font-size: 1.7rem;
       }
     }
   }

@@ -324,3 +324,21 @@
     }
   }
 }
+
+.client-create{
+  &-wrapper{
+    width: 100%;
+    max-width: 78rem;
+    &:not(:last-child){
+      margin-bottom: 2.4rem;
+      padding-bottom: 2.4rem;
+      border-bottom: 1px solid rgba(12, 12, 12, 0.10);
+    }
+  }
+  &__title{
+    margin-bottom: 2rem;
+    @media (max-width: 450px){
+      margin-bottom: 1.6rem;
+    }
+  }
+}
