@@ -111,6 +111,11 @@
         top: 1.6rem;
         right: 1.6rem;
       }
+      .notifications-list-item-options{
+        @media (max-width: 450px) {
+          top: 110%;
+        }
+      }
     }
 
     &-list {

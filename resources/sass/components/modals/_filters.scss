@@ -161,4 +161,8 @@
   &-groups {
     margin-bottom: 2.4rem;
   }
+
+  @media (max-width: 450px){
+    padding-bottom: 5rem;
+  }
 }

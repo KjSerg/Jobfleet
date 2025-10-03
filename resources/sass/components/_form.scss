@@ -97,33 +97,7 @@
   }
 }
 
-input{
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.7rem;
-  font-style: normal;
-  font-weight: 500;
-  color: #0C0C0C;
-  @media (max-width: 450px) {
-    font-size: 1.3rem;
-  }
-  &::placeholder{
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.7rem;
-    font-style: normal;
-    font-weight: 400;
-    color: rgba(12, 12, 12, 0.55);
-    @media (max-width: 450px) {
-      font-size: 1.3rem;
-    }
-  }
-  &.error{
-    color: red!important;
-    border-color: red!important;
-    &::placeholder{
-      color: red!important;
-    }
-  }
-}
+
 
 .form {
   &-search {
@@ -170,5 +144,33 @@ input {
 
   &::placeholder{
     color: rgba(12, 12, 12, 0.55);
+  }
+}
+
+input{
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.7rem;
+  font-style: normal;
+  font-weight: 500;
+  color: #0C0C0C;
+  @media (max-width: 450px) {
+    font-size: 1.3rem;
+  }
+  &::placeholder{
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.7rem;
+    font-style: normal;
+    font-weight: 400;
+    color: rgba(12, 12, 12, 0.55);
+    @media (max-width: 450px) {
+      font-size: 1.3rem;
+    }
+  }
+  &.error{
+    color: red!important;
+    border-color: red!important;
+    &::placeholder{
+      color: red!important;
+    }
   }
 }
