@@ -3,6 +3,7 @@ let duration = 400;
 let windowWidthReconfiguration = 1450;
 doc.addEventListener('DOMContentLoaded', function () {
     tableRowsCheckboxInit();
+    tabsLinkListener();
     doc.querySelectorAll('.theme-switcher').forEach(function (element) {
         element.addEventListener('click', function (e) {
             e.preventDefault();
@@ -128,6 +129,31 @@ doc.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+function tabsLinkListener(){
+    doc.querySelectorAll('.tabs__link').forEach(function (element) {
+        element.addEventListener('click', function (e) {
+            e.preventDefault();
+            const wrapper = element.closest('.tabs');
+            const href = element.getAttribute('href');
+            if (element.classList.contains('active')) return;
+            if(href === null) return;
+            if(href === undefined) return;
+            if(href === '') return;
+            if(href === '#') return;
+            const content = doc.querySelector(href);
+            if(content === null) return;
+            doc.querySelectorAll('.tabs__content').forEach(function (contentItem){
+                contentItem.classList.remove('active');
+            });
+            doc.querySelectorAll('.tabs__link').forEach(function (contentItem){
+                contentItem.classList.remove('active');
+            });
+            content.classList.add('active');
+            element.classList.add('active');
+        });
+    });
+}
 
 function tableRowsCheckboxInit() {
     doc.querySelectorAll('.select-all-rows').forEach(function (mainCheckbox) {

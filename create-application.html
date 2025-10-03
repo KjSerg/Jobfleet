@@ -140,7 +140,7 @@
                         </a>
                     </li>
                     <li class="sidebar-list__item">
-                        <a href="#" class="sidebar-list__link ">
+                        <a href="#" class="sidebar-list__link active">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none">
   <path d="M2 22H22" stroke="#CFA14F" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
@@ -164,7 +164,7 @@
                         </a>
                     </li>
                     <li class="sidebar-list__item">
-                        <a href="#" class="sidebar-list__link active">
+                        <a href="#" class="sidebar-list__link">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none">
   <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#737373"
@@ -221,7 +221,7 @@
                 </div>
             </div>
         </div>
-        <div class="dashboard-wrapper transition background-grey">
+        <div class="dashboard-wrapper  transition background-grey">
             <div class="dashboard-head transition background-white dark-color">
                 <button class="sidebar__slide-show">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -231,7 +231,15 @@
         stroke="#0C0C0C" stroke-opacity="0.55" stroke-width="1.5"/>
 </svg>
                 </button>
-                <div class="dashboard__title ">Заявки</div>
+
+                <a href="#" class="dashboard__back-link dark-color">
+                    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15"
+                                            fill="none">
+  <path d="M7.375 14.2082L1.625 7.49984L7.375 0.791504" stroke="#0C0C0C" stroke-width="1.5" stroke-linecap="round"
+        stroke-linejoin="round"/>
+</svg></span>
+                    Вернуться назад
+                </a>
                 <div class="dashboard-head-controls">
                     <button class="theme-switcher">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
@@ -270,62 +278,55 @@
                     </div>
                 </div>
             </div>
-            <div class="wrap wrap--full-height background-white">
-                <div class="wrap-head">
-                    <div class="clients-head">
-                        <div class="clients-head__search">
-                            <form class="form-search ">
-                                <label class="form-search__label">
-                                    <span class="icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"
-                                                            xmlns="http://www.w3.org/2000/svg">
-<path d="M10.5417 19.2502C15.3512 19.2502 19.25 15.3513 19.25 10.5418C19.25 5.73235 15.3512 1.8335 10.5417 1.8335C5.73223 1.8335 1.83337 5.73235 1.83337 10.5418C1.83337 15.3513 5.73223 19.2502 10.5417 19.2502Z"
-      stroke="#0C0C0C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M20.1667 20.1668L18.3334 18.3335" stroke="#0C0C0C" stroke-width="1.5" stroke-linecap="round"
-      stroke-linejoin="round"/>
-</svg>
-</span>
-                                    <input type="text" name="s" value="Ничего не найдено" placeholder="Поиск">
-                                </label>
-                            </form>
-                        </div>
-                        <div class="clients-head-controls">
-                            <a href="#" class="dashboard__button clients-dashboard__button dark-color">
-                                <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg">
-<circle cx="12" cy="12" r="10" stroke="#CFA14F" stroke-width="1.5"/>
-<path d="M15 12L12 12M12 12L9 12M12 12L12 9M12 12L12 15" stroke="#CFA14F" stroke-width="1.5" stroke-linecap="round"/>
-</svg>
-</span>
-                                Создать заявку
-                            </a>
-                            <a href="#filters"
-                               class="dashboard__button clients-dashboard__button dark-color custom-modal-open">
-                                <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg">
-<path d="M9.5 14C11.1569 14 12.5 15.3431 12.5 17C12.5 18.6568 11.1569 20 9.5 20C7.84315 20 6.5 18.6568 6.5 17C6.5 15.3431 7.84315 14 9.5 14Z"
-      stroke="#CFA14F" stroke-width="1.5"/>
-<path d="M14.5 3.99998C12.8431 3.99998 11.5 5.34312 11.5 6.99998C11.5 8.65683 12.8431 9.99998 14.5 9.99998C16.1569 9.99998 17.5 8.65683 17.5 6.99998C17.5 5.34312 16.1569 3.99998 14.5 3.99998Z"
-      stroke="#CFA14F" stroke-width="1.5"/>
-<path d="M15 16.9585L22 16.9585" stroke="#CFA14F" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M9 6.9585L2 6.9585" stroke="#CFA14F" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M2 16.9585L4 16.9585" stroke="#CFA14F" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M22 6.9585L20 6.9585" stroke="#CFA14F" stroke-width="1.5" stroke-linecap="round"/>
-</svg>
-</span>
-                                <span class="dashboard__button-text">Фильтр</span>
-                            </a>
-                        </div>
-                    </div>
+            <div class="dashboard-subhead background-white dark-color">
+                <div class="dashboard-subhead__title">Создание заявки</div>
+                <button type="submit" class="custom-button custom-button--gold hidden-on-mobile">
+                    Сохранить
+                </button>
+            </div>
+            <div class="wrap tabs wrap--full-height background-white tabs">
+                <div class="tabs-head tabs-head--indents">
+                    <a href="#tab1" class="tabs__link dark-color active">Настройки заявки</a>
+                    <a href="#tab2" class="tabs__link dark-color">Настройки вакансии </a>
+                    <a href="#tab3" class="tabs__link dark-color ">Кандидаты</a>
+                    <a href="#tab4" class="tabs__link dark-color">Файлы</a>
+                    <a href="#tab5" class="tabs__link dark-color ">Чеклист</a>
                 </div>
                 <div class="wrap-body">
-                    <div class="table-wrap">
-                        <div class="text grey-color">
-                            <strong class="dark-color">Ничего не найдено</strong>
-                            <p>
-                                Попробуйте изменить условия поиска или проверьте правильность <br> введенных данных
-                            </p>
+                    <div class="tabs__content active" id="tab1">
+                        <div class="client-create-wrapper">
+                            <div class="wrap-head__title client-create__title dark-color">
+                                Информация о заявке
+                            </div>
+                            <div class="form client-create-form dark-color">
+                                <label class="form-label ">
+                                    <span class="form-label__title">Менеджер</span>
+                                    <select title="Страна" name="" class="main-select">
+                                        <option value="" selected disabled>Выберите из списка</option>
+                                        <option>Менеджер1</option>
+                                        <option>Менеджер2</option>
+                                    </select>
+                                </label>
+                                <label class="form-label half">
+                                    <span class="form-label__title">Статус заявки</span>
+                                    <select title="Страна" name="" class="main-select">
+                                        <option value="" selected disabled>Выберите из списка</option>
+                                        <option>Статус1</option>
+                                        <option>Статус2</option>
+                                    </select>
+                                </label>
+                                <label class="form-label half">
+                                    <span class="form-label__title">Дата дедлайна</span>
+                                    <input type="date">
+                                </label>
+                                <label class="form-label ">
+                                    <span class="form-label__title">Комментарий</span>
+                                    <input type="text">
+                                </label>
+                            </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

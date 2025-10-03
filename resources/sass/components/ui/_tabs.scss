@@ -1,0 +1,48 @@
+.tabs {
+  &__content {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    padding: 1.2rem;
+    border-bottom: 2px solid rgba(#CFA14F, 0);
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.3rem;
+    white-space: nowrap;
+    @media (max-width: 767px) {
+      padding: 1.2rem 0.8rem;
+      font-size: 1.3rem;
+      line-height: 2.3rem;
+    }
+
+    &:hover {
+      border-color: rgba(#CFA14F, 0.5);
+    }
+
+    &.active {
+      border-color: rgba(#CFA14F, 1);
+    }
+  }
+
+  &-head {
+    display: flex;
+    border-bottom: 1px solid rgba(12, 12, 12, 0.10);
+    overflow: auto;
+
+    &--indents {
+      margin: 2.4rem 0;
+      padding: 0 2.4rem;
+      @media (max-width: 767px) {
+        margin: 1.6rem 0;
+        padding: 0 1.6rem;
+      }
+    }
+  }
+}
