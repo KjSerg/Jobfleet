@@ -142,6 +142,12 @@ html {
     .notifications-list-item.unread{
       background-color:rgba(255, 251, 242, 0.10);
     }
+
+    .sort-link{
+      &:hover{
+        background-color:rgba(255, 251, 242, 0.10);
+      }
+    }
   }
 }
 
@@ -153,6 +159,13 @@ html {
   color: rgba(12, 12, 12, 0.55);
   transition: 0.4s ease-in-out;
   will-change: transform;
+}
+
+.green-color{
+  color: #219653;
+}
+.yellow-color{
+  color: #F2994A;
 }
 
 .dark-color {

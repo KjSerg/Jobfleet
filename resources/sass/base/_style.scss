@@ -198,17 +198,18 @@ section {
 }
 
 .text {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 3rem;
+  line-height: 2.6rem;
 
   & > *:not(:last-child) {
     margin-bottom: 1rem;
   }
 
   strong {
-    font-weight: 600;
+    display: inline-block;
+    font-weight: 700;font-size: 1.7rem;
   }
 
   em {
