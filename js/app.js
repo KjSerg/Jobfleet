@@ -85,8 +85,8 @@ doc.addEventListener('DOMContentLoaded', function () {
             if (sidebar.classList.contains('sidebar--hidden')) return;
             sidebar.classList.add('sidebar--hidden');
             const section = sidebar.closest('.dashboard-section');
-            slideLeft(sidebar, duration);
             section.classList.add('dashboard-section--full');
+
         });
     });
     doc.querySelectorAll('.sidebar__slide-show').forEach(function (element) {
@@ -101,9 +101,12 @@ doc.addEventListener('DOMContentLoaded', function () {
             }
             if (!sidebar.classList.contains('sidebar--hidden')) return;
             sidebar.classList.remove('sidebar--hidden');
+            sidebar.classList.add('sidebar--hidden-sliding');
             const section = sidebar.closest('.dashboard-section');
-            slideRight(sidebar, duration);
             section.classList.remove('dashboard-section--full');
+            setTimeout(function (){
+                sidebar.classList.remove('sidebar--hidden-sliding');
+            }, 410);
         });
     });
     doc.querySelectorAll('.open-sidebar-js').forEach(function (element) {
@@ -137,7 +140,6 @@ doc.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
-
 
 
 observerFormsInit();

@@ -1,11 +1,15 @@
 .header {
+  position: relative;
   padding: 1.8rem 1.6rem;
   border-bottom: 1px solid rgba(211, 223, 236, 0.20);
   background: #0C0C0C;
   &-mobile{
     display: none;
-    @media (max-width: 767px) {
+    @media (max-width: 1450px) {
       display: block;
+    }
+    @media (max-width: 450px) {
+      z-index: 20;
     }
   }
   &__notifications-button{

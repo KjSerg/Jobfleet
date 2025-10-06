@@ -109,7 +109,14 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
   <path d="M14.9999 1.00006L1 15M0.999941 1L14.9999 14.9999" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
 </svg>
-                    </button>
+                    </button><button class="sidebar__slide-show">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M13.5 9L10.5 12L13.5 15" stroke="#0C0C0C" stroke-opacity="0.55" stroke-width="1.5" stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z"
+        stroke="#0C0C0C" stroke-opacity="0.55" stroke-width="1.5"/>
+</svg>
+                </button>
                 </div>
             </div>
             <div class="sidebar__user">
@@ -223,15 +230,6 @@
         </div>
         <div class="dashboard-wrapper  transition background-grey">
             <div class="dashboard-head transition background-white dark-color">
-                <button class="sidebar__slide-show">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-  <path d="M13.5 9L10.5 12L13.5 15" stroke="#0C0C0C" stroke-opacity="0.55" stroke-width="1.5" stroke-linecap="round"
-        stroke-linejoin="round"/>
-  <path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z"
-        stroke="#0C0C0C" stroke-opacity="0.55" stroke-width="1.5"/>
-</svg>
-                </button>
-
                 <a href="#" class="dashboard__back-link dark-color">
                     <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15"
                                             fill="none">
@@ -287,8 +285,8 @@
             <div class="wrap tabs wrap--full-height background-white tabs">
                 <div class="tabs-head tabs-head--indents">
                     <a href="#application-settings-form" class="tabs__link dark-color ">Настройки заявки</a>
-                    <a href="#tab2" class="tabs__link dark-color">Настройки вакансии </a>
-                    <a href="#candidates-form" class="tabs__link dark-color active">Кандидаты</a>
+                    <a href="#job-settings" class="tabs__link dark-color active">Настройки вакансии </a>
+                    <a href="#candidates-form" class="tabs__link dark-color ">Кандидаты</a>
                     <a href="#tab4" class="tabs__link dark-color">Файлы</a>
                     <a href="#tab5" class="tabs__link dark-color ">Чеклист</a>
                 </div>
@@ -331,7 +329,7 @@
                             </button>
                         </div>
                     </form>
-                    <form  class="tabs__content active" id="candidates-form">
+                    <form  class="tabs__content active" id="job-settings">
                         <div class="client-create-wrapper">
                             <div class="wrap-head__title client-create__title dark-color">
                                <div class="icon"><img src="img/info.svg" alt=""></div> Основная информация о вакансии
