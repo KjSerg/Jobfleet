@@ -1,4 +1,4 @@
-.custom-modals{
+.custom-modals {
   position: fixed;
   display: block;
   z-index: 1;
@@ -13,11 +13,63 @@
   overflow: hidden;
 }
 
-body{
+.custom-modal {
+  position: fixed;
+  opacity: 0;
+
+  width: 100%;
+  max-width: 53rem;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+
+  border-radius: 2rem;
+  border: 1px solid rgba(10, 10, 10, 0.10);
+
+  padding: 3.2rem;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.6rem;
+
+  &.custom-modal-active{
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+
+  &-controls{
+    display: flex;
+    gap: 1.2rem;
+  }
+  &__control{
+    flex: 1;
+  }
+
+  &__subtitle {
+    &:not(:last-child) {
+      margin-bottom: 2.4rem;
+    }
+  }
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    font-size: 2.3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2.9rem;
+  }
+}
+
+body {
   position: relative;
-  &.open-custom-modal{
+
+  &.open-custom-modal {
     overflow: hidden;
-    .custom-modals{
+
+    .custom-modals {
       opacity: 1;
       pointer-events: auto;
     }

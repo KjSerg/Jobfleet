@@ -36,6 +36,7 @@ doc.addEventListener('DOMContentLoaded', function () {
             if (href === undefined) return;
             const queriedElement = _$(href);
             if (queriedElement === null) return;
+            console.log(queriedElement)
             queriedElement.classList.add('custom-modal-active');
             _$('body').classList.add('open-custom-modal');
         });
@@ -45,23 +46,30 @@ doc.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
             const href = element.getAttribute('href') || '';
             const test = ['', '#', undefined, null].includes(href);
+            console.log(href)
+            _$('body').classList.remove('open-custom-modal');
+            console.log(  _$('body'))
             if (test) {
                 removeClassFromElements('.custom-modal-active', 'custom-modal-active');
-                _$('body').classList.remove('open-custom-modal');
             } else {
                 const queriedElement = _$(href);
                 if (queriedElement === null) return;
+                console.log( queriedElement)
                 queriedElement.classList.remove('custom-modal-active');
-                _$('body').classList.remove('open-custom-modal');
+                queriedElement.classList.remove('custom-modal-active');
+                queriedElement.classList.remove('custom-modal-active');
             }
 
         });
     });
     doc.querySelectorAll('.custom-modals').forEach(function (element) {
         element.addEventListener('click', function (e) {
-            if (!e.target.classList.contains('custom-modals')) return;
-            removeClassFromElements('.custom-modal-active', 'custom-modal-active');
-            _$('body').classList.remove('open-custom-modal');
+            console.log(e)
+            if (e.target.classList.contains('custom-modals')) {
+
+                removeClassFromElements('.custom-modal-active', 'custom-modal-active');
+                _$('body').classList.remove('open-custom-modal');
+            }
         });
     });
     doc.querySelectorAll('.sidebar__slide-hide').forEach(function (element) {
@@ -129,6 +137,78 @@ doc.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+
+
+observerFormsInit();
+
+function observerFormsInit(){
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- Частина 1: Відстеження змін у формах (як і раніше) ---
+        const formsToObserve = document.querySelectorAll('.observer-forms form');
+        if(formsToObserve.length === 0) return;
+        const dirtyForms = new Set();
+
+        if (formsToObserve.length > 0) {
+            formsToObserve.forEach(form => {
+                form.addEventListener('input', () => dirtyForms.add(form));
+                form.addEventListener('submit', () => dirtyForms.delete(form));
+            });
+        }
+
+        // Функція для перевірки, чи є незбережені зміни
+        const hasUnsavedChanges = () => dirtyForms.size > 0;
+
+        // --- Частина 2: Логіка кастомного модального вікна ---
+        const confirmBtn = document.getElementById('modal-confirm');
+        const alertModal = document.getElementById('alert-modal');
+        const leavePage = document.getElementById('leave-page');
+
+        let navigationUrl = null; // Зберігаємо URL, на який хоче перейти користувач
+
+        const openCustomModal = () => {
+            alertModal.classList.add('custom-modal-active');
+            _$('body').classList.add('open-custom-modal');
+        };
+
+
+
+        // Обробник для кнопки "Так, покинути"
+        confirmBtn.addEventListener('click', () => {
+            if (navigationUrl) {
+                // "Вимикаємо" всі наші перевірки перед переходом
+                formsToObserve.forEach(form => {
+                    form.submit();
+                });
+                window.removeEventListener('beforeunload', handleBeforeUnload);
+            }
+        });
+
+
+        // --- Частина 3: Перехоплення кліків по посиланнях ---
+        doc.querySelectorAll('a:not(#leave-page)').forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                leavePage.setAttribute('href', link.getAttribute('href'));
+                if (link && link.href && hasUnsavedChanges() && !link.href.startsWith('javascript:')) {
+                    event.preventDefault();
+                    navigationUrl = link.href;
+                    openCustomModal();
+                }
+            });
+        });
+
+
+        // --- Частина 4: "Запасний" обробник beforeunload ---
+        const handleBeforeUnload = (event) => {
+            if (hasUnsavedChanges()) {
+                event.preventDefault();
+                event.returnValue = ''; // Для сумісності
+            }
+        };
+
+        window.addEventListener('beforeunload', handleBeforeUnload);
+    });
+}
 
 function tabsLinkListener(){
     doc.querySelectorAll('.tabs__link').forEach(function (element) {

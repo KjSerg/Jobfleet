@@ -148,6 +148,49 @@ html {
         background-color:rgba(255, 251, 242, 0.10);
       }
     }
+
+    .switcher {
+
+
+      &-container {
+        &:after {
+          background: #121212;
+        }
+
+        span {
+          &:first-child {
+            color: #fff;
+          }
+        }
+
+
+      }
+
+      input[type="checkbox"] {
+        &:checked {
+          & + .switcher-container {
+            &:after {
+              background: #CFA14F;
+            }
+
+            span {
+              &:first-child {
+                color: inherit;
+              }
+
+              &:last-child {
+                color: #fff;
+              }
+            }
+          }
+        }
+        &:hover{
+          & + .switcher-container{
+            border-color:rgba(10, 10, 10, 0.2);
+          }
+        }
+      }
+    }
   }
 }
 

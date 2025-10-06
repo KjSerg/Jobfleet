@@ -53,3 +53,52 @@
     background:  #E9E9E9;
   }
 }
+.dashboard {
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.2rem 2rem;
+    border-radius: 4.4rem;
+    border: 1px solid rgba(207, 161, 79, 0.30);
+    background: #FFFBF2;
+
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.3rem;
+    &--gold{
+      border: 1px solid rgba(207, 161, 79, 0.10);
+      background: #CFA14F;
+      color: #fff;
+    }
+    .icon{
+      width: 2.4rem;
+      height: 2.4rem;
+      @media (max-width: 360px){
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+    }
+    @media (max-width: 360px){
+      padding: 1rem 1.2rem;
+    }
+    svg {
+      path {
+        transition: 0.4s ease-in-out;
+      }
+    }
+
+    &:hover {
+      color: #fff;
+      background: #CFA14F;
+
+      svg {
+        path {
+          stroke: #fff;
+        }
+      }
+    }
+  }
+}

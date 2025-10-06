@@ -1,37 +1,4 @@
 .dashboard {
-  &__button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    padding: 1.2rem 2rem;
-    border-radius: 4.4rem;
-    border: 1px solid rgba(207, 161, 79, 0.30);
-    background: #FFFBF2;
-
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 2.3rem;
-
-    svg {
-      path {
-        transition: 0.4s ease-in-out;
-      }
-    }
-
-    &:hover {
-      color: #fff;
-      background: #CFA14F;
-
-      svg {
-        path {
-          stroke: #fff;
-        }
-      }
-    }
-  }
-
   &__title {
     font-size: 2.5rem;
     font-style: normal;
@@ -46,6 +13,7 @@
   &__back-link {
     margin-left: 1rem;
     display: inline-flex;
+    align-items: center;
     gap: 1.5rem;
     font-size: 1.5rem;
     font-style: normal;
@@ -56,8 +24,8 @@
     }
 
     .icon {
-      width: 2.3rem;
-      height: 2.3rem;
+      width: 9px;
+      height: 15px;
     }
   }
 
