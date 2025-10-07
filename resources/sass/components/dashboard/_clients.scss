@@ -94,6 +94,7 @@
     }
 
     &-controls {
+      z-index: 20;
       a:hover {
         text-decoration: none;
       }
