@@ -139,6 +139,13 @@ html {
         }
       }
     }
+    .candidates-body {
+      .candidates__row {
+        &:nth-child(odd) {
+          background: #121212;
+        }
+      }
+    }
 
     .custom-select__value {
       background: #121212;
