@@ -130,29 +130,41 @@
     }
   }
 
-  &-controls{
+  &-controls {
     display: flex;
     flex-wrap: wrap;
     gap: 1.2rem;
-    &:not(:first-child){
+
+    &:not(:first-child) {
       margin-top: 2rem;
     }
-    @media (max-width: 450px){
+
+    @media (max-width: 450px) {
       flex-direction: column;
     }
   }
 
-  &-file{
-    &-wrapper{
+  &-file {
+    &-wrapper {
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-between;
       align-items: flex-start;
       gap: 2rem;
 
+      .empty-text{
+        width: 100%;
+      }
+
     }
-    &-label{
+
+    &-label {
       position: relative;
-      input[type='file']{
+
+      @media (max-width: 450px) {
+        width: 100%;
+      }
+      input[type='file'] {
         position: absolute;
         z-index: 1;
         top: 0;
@@ -246,19 +258,91 @@ input {
   }
 }
 
-.form-file-list{
+.form-file-list {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 1.2rem;
-  .file-item{
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.6rem;
+  @media (max-width: 768px) {
+    gap: 0.8rem;
+  }
+  .file-item {
+    padding: 2rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    .icon{
+    width: calc(25% - 1rem);
+    border-radius: 0.8rem;
+    border: 1px solid rgba(10, 10, 10, 0.10);
+    gap: 1.6rem;
 
+
+    @media (max-width: 1024px) {
+      gap: 1rem;
+      width: calc(33.3% - 0.8rem);
+    }
+    @media (max-width: 768px) {
+      gap: 1rem;
+      width: calc(50% - 0.4rem);
+    }
+    @media (max-width: 767px) {
+      width: 100%;
+      padding: 1.6rem;
+    }
+    &__name{
+      display: block;
+      width: 70%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+
+
+    .delete-btn {
+      margin-left: auto;
+      font-size: 3rem;
+    }
+
+    .icon {
+      padding: 1rem;
+      width: 5.2rem;
+      height: 5.2rem;
+      border-radius: 50%;
+      background: #CFA14F;
+      @media (max-width: 1024px) {
+        width: 4.4rem;
+        height: 4.4rem;
+      }
+    }
+
+    &-type-doc, &-type-docx {
+
+      .icon {
+        background: #2F80ED;
+      }
+    }
+
+    &-type-pdf {
+
+      .icon {
+        background: #EB5757;
+      }
+    }
+
+    &-type-xlsx, &-type-xls {
+
+      .icon {
+        background: #27AE60;
+      }
     }
   }
 }
+
+
 
 .switcher {
   position: relative;
@@ -319,6 +403,7 @@ input {
     width: 100%;
     height: 100%;
     cursor: pointer;
+
     &:checked {
       & + .switcher-container {
         &:after {
@@ -337,9 +422,10 @@ input {
         }
       }
     }
-    &:hover{
-      & + .switcher-container{
-        border-color:rgba(10, 10, 10, 0.2);
+
+    &:hover {
+      & + .switcher-container {
+        border-color: rgba(10, 10, 10, 0.2);
       }
     }
   }

@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     const fileInput = document.getElementById('file-js');
     const fileListContainer = document.getElementById('form-file-list');
-    const emptyContainer = document.querySelector('.form-file-wrapper--empty');
-    const uploadedContainer = document.querySelector('.form-file-wrapper--uploaded');
+    const emptyContainer = document.querySelector('.empty-text');
+    const uploadedContainer = document.querySelector('.uploaded-text');
 
 
     // Ми більше не будемо покладатися на одну глобальну змінну dataTransfer для видалення.
@@ -38,13 +38,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         files.forEach((file, index) => {
             const fileItemElement = document.createElement('div');
-            fileItemElement.className = 'file-item';
+            fileItemElement.className = 'file-item background-grey file-item-type-' + getFileType(file);
 
             const fileNameElement = document.createElement('span');
+            fileNameElement.className = 'file-item__name';
             fileNameElement.textContent = file.name;
 
             const deleteButton = document.createElement('button');
-            deleteButton.className = 'delete-btn';
+            deleteButton.className = 'delete-btn dark-color';
             deleteButton.textContent = '×';
             deleteButton.dataset.index = index;
 
@@ -53,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const iconElement = document.createElement('span');
             iconElement.className = 'icon';
             iconElement.innerHTML = documentIconSvg;
-
+            fileItemElement.setAttribute('title', file.name);
             fileItemElement.appendChild(iconElement);
             fileItemElement.appendChild(fileNameElement);
             fileItemElement.appendChild(deleteButton);
@@ -87,3 +88,8 @@ document.addEventListener('DOMContentLoaded', function () {
         renderFileList();
     }
 });
+
+function getFileType(file){
+    const splitNameToArray = file.name.split(".");
+    return splitNameToArray[splitNameToArray.length - 1];
+}
