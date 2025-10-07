@@ -33,6 +33,12 @@
   font-weight: 500;
   line-height: 2.6rem;
 
+  @media (max-width: 450px) {
+    padding: 2rem;
+    font-size: 1.3rem;
+    line-height: 2.3rem;
+  }
+
   &.custom-modal-active{
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
@@ -41,6 +47,9 @@
   &-controls{
     display: flex;
     gap: 1.2rem;
+    @media (max-width: 450px) {
+      gap: 0.8rem;
+    }
   }
   &__control{
     flex: 1;

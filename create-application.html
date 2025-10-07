@@ -67,7 +67,7 @@
     </div>
 </header>
 <main class="content">
-    <section class="section dashboard-section">
+    <section class="section dashboard-section observer-forms">
         <div id="sidebar" class="sidebar">
             <div class="sidebar__head">
                 <a href="#" class="logo sidebar__logo">
@@ -283,16 +283,16 @@
                     Сохранить
                 </button>
             </div>
-            <div class="wrap tabs wrap--full-height background-white tabs">
+            <div class="wrap tabs  wrap--full-height background-white tabs">
                 <div class="tabs-head tabs-head--indents">
                     <a href="#application-settings-form" class="tabs__link dark-color ">Настройки заявки</a>
                     <a href="#job-settings" class="tabs__link dark-color ">Настройки вакансии </a>
                     <a href="#candidates" class="tabs__link dark-color ">Кандидаты</a>
-                    <a href="#files-form" class="tabs__link dark-color active">Файлы</a>
-                    <a href="#tab5" class="tabs__link dark-color ">Чеклист</a>
+                    <a href="#files-form" class="tabs__link dark-color ">Файлы</a>
+                    <a href="#checklist" class="tabs__link dark-color active">Чеклист</a>
                 </div>
-                <div class="wrap-body observer-forms padding-top-none">
-                    <form class="tabs__content " id="application-settings-form">
+                <form class="wrap-body  padding-top-none">
+                    <div class="tabs__content " id="application-settings-form">
                         <div class="client-create-wrapper">
                             <div class="wrap-head__title client-create__title dark-color">
                                 Информация о заявке
@@ -329,8 +329,8 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
-                    <form class="tabs__content " id="job-settings">
+                    </div>
+                    <div class="tabs__content " id="job-settings">
                         <div class="client-create-wrapper">
                             <div class="wrap-head__title client-create__title dark-color">
                                 <div class="icon"><img src="img/info.svg" alt=""></div>
@@ -549,7 +549,7 @@
                             </div>
                         </div>
 
-                    </form>
+                    </div>
                     <div id="candidates" class="tabs__content ">
                         <div class="candidates">
                             <div class="candidates-head dark-color">
@@ -803,7 +803,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div id="files-form" class="tabs__content active">
+                    <div id="files-form" class="tabs__content">
                         <div class="form-file-box">
                             <div class="form-file-wrapper ">
                                 <div class="empty-text">
@@ -833,7 +833,49 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                    <div id="checklist" class="tabs__content active">
+                        <div class="wrap-head__title client-create__title dark-color">
+                            Чек-лист по списку кандидатов:
+                        </div>
+                        <div class="form-checklist dark-color">
+                            <label class="form-checklist-item background-grey">
+                                <span class="checkbox">
+                                    <input type="checkbox">
+                                    <span><img src="img/check.svg" alt=""></span>
+                                </span>
+                                Переводы
+                            </label>
+                            <label class="form-checklist-item background-grey">
+                                <span class="checkbox">
+                                    <input type="checkbox">
+                                    <span><img src="img/check.svg" alt=""></span>
+                                </span>
+                                Переводы
+                            </label>
+                            <label class="form-checklist-item background-grey">
+                                <span class="checkbox">
+                                    <input type="checkbox">
+                                    <span><img src="img/check.svg" alt=""></span>
+                                </span>
+                                Переводы
+                            </label>
+                            <label class="form-checklist-item background-grey">
+                                <span class="checkbox">
+                                    <input type="checkbox">
+                                    <span><img src="img/check.svg" alt=""></span>
+                                </span>
+                                Переводы
+                            </label>
+                            <label class="form-checklist-item background-grey">
+                                <span class="checkbox">
+                                    <input type="checkbox">
+                                    <span><img src="img/check.svg" alt=""></span>
+                                </span>
+                                Переводы
+                            </label>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </section>

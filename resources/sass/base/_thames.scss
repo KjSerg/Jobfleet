@@ -61,9 +61,14 @@ html {
       }
 
       &-grey {
-border-color: rgba(255, 255, 255, 0.10);
+        border-color: rgba(255, 255, 255, 0.10);
         background-color: #0C0C0C;
       }
+    }
+
+    .checkbox span {
+      border-color: rgba(255, 255, 255, 0.10);
+
     }
 
     .dashboard-head {
@@ -88,7 +93,7 @@ border-color: rgba(255, 255, 255, 0.10);
       color: #EB5757;
     }
 
-    input{
+    input {
       border-color: rgba(255, 255, 255, 0.05);
       background: #121212;
       color: #fff;
@@ -102,53 +107,62 @@ border-color: rgba(255, 255, 255, 0.10);
       }
     }
 
-    .dashboard__button{
+    .dashboard__button {
       border-color: rgba(207, 161, 79, 0.50);
       background: rgba(255, 251, 242, 0.10);
+
       &:hover {
         background: #CFA14F;
       }
     }
+
     .filters__label span {
       background: #121212;
     }
+
     .checkbox span {
       background: #121212;
     }
-    .clients-table-body{
-      .clients-table-row{
-        &:nth-child(odd){
-          background: #121212;
-        }
-      }
-    }
-    .company-applications-body{
-      .company-applications__row{
-        &:nth-child(odd){
+
+    .clients-table-body {
+      .clients-table-row {
+        &:nth-child(odd) {
           background: #121212;
         }
       }
     }
 
-    .custom-select__value{
+    .company-applications-body {
+      .company-applications__row {
+        &:nth-child(odd) {
+          background: #121212;
+        }
+      }
+    }
+
+    .custom-select__value {
       background: #121212;
     }
-    .main-select-wrapper__value, .main-select-options, .candidate-card__link{
+
+    .main-select-wrapper__value, .main-select-options, .candidate-card__link {
       background: #121212;
     }
-    .main-select-option:hover{
+
+    .main-select-option:hover {
       background-color: rgba(255, 255, 255, 0.05);
     }
-    .notifications-list-item.unread{
-      background-color:rgba(255, 251, 242, 0.10);
-    }
-    .candidate-card__avatar{
-      background-color:rgba(255, 251, 242, .4);
+
+    .notifications-list-item.unread {
+      background-color: rgba(255, 251, 242, 0.10);
     }
 
-    .sort-link{
-      &:hover{
-        background-color:rgba(255, 251, 242, 0.10);
+    .candidate-card__avatar {
+      background-color: rgba(255, 251, 242, .4);
+    }
+
+    .sort-link {
+      &:hover {
+        background-color: rgba(255, 251, 242, 0.10);
       }
     }
 
@@ -187,9 +201,10 @@ border-color: rgba(255, 255, 255, 0.10);
             }
           }
         }
-        &:hover{
-          & + .switcher-container{
-            border-color:rgba(10, 10, 10, 0.2);
+
+        &:hover {
+          & + .switcher-container {
+            border-color: rgba(10, 10, 10, 0.2);
           }
         }
       }
@@ -207,10 +222,11 @@ border-color: rgba(255, 255, 255, 0.10);
   will-change: transform;
 }
 
-.green-color{
+.green-color {
   color: #219653;
 }
-.yellow-color{
+
+.yellow-color {
   color: #F2994A;
 }
 
