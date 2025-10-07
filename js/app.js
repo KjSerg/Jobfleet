@@ -4,6 +4,8 @@ let windowWidthReconfiguration = 1450;
 doc.addEventListener('DOMContentLoaded', function () {
     tableRowsCheckboxInit();
     tabsLinkListener();
+    inputCreatorAndRemover();
+    avatarUploader();
     doc.querySelectorAll('.theme-switcher').forEach(function (element) {
         element.addEventListener('click', function (e) {
             e.preventDefault();
@@ -48,13 +50,13 @@ doc.addEventListener('DOMContentLoaded', function () {
             const test = ['', '#', undefined, null].includes(href);
             console.log(href)
             _$('body').classList.remove('open-custom-modal');
-            console.log(  _$('body'))
+            console.log(_$('body'))
             if (test) {
                 removeClassFromElements('.custom-modal-active', 'custom-modal-active');
             } else {
                 const queriedElement = _$(href);
                 if (queriedElement === null) return;
-                console.log( queriedElement)
+                console.log(queriedElement)
                 queriedElement.classList.remove('custom-modal-active');
                 queriedElement.classList.remove('custom-modal-active');
                 queriedElement.classList.remove('custom-modal-active');
@@ -104,7 +106,7 @@ doc.addEventListener('DOMContentLoaded', function () {
             sidebar.classList.add('sidebar--hidden-sliding');
             const section = sidebar.closest('.dashboard-section');
             section.classList.remove('dashboard-section--full');
-            setTimeout(function (){
+            setTimeout(function () {
                 sidebar.classList.remove('sidebar--hidden-sliding');
             }, 410);
         });
@@ -113,11 +115,11 @@ doc.addEventListener('DOMContentLoaded', function () {
         element.addEventListener('click', function (e) {
             e.preventDefault();
             const sidebar = _$('.sidebar');
-            if(_$('body').classList.contains('open-sidebar')){
+            if (_$('body').classList.contains('open-sidebar')) {
                 element.classList.remove('active');
                 sidebar.classList.remove('sidebar--showed-mobile');
                 _$('body').classList.remove('open-sidebar');
-            }else {
+            } else {
                 element.classList.add('active');
                 sidebar.classList.add('sidebar--showed-mobile');
                 _$('body').classList.add('open-sidebar');
@@ -139,16 +141,30 @@ doc.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+    doc.querySelectorAll('.accordion__checkbox').forEach(function (element) {
+        element.addEventListener('change', function (e) {
+            e.preventDefault();
+            const wrapper = element.closest('.accordion');
+            const content = wrapper.querySelector('.accordion__content');
+            if (element.checked !== true) {
+                wrapper.classList.remove('active');
+                slideUp(content, duration)
+            } else {
+                wrapper.classList.add('active');
+                slideDown(content, duration)
+            }
+        });
+    });
 });
 
 
 observerFormsInit();
 
-function observerFormsInit(){
+function observerFormsInit() {
     document.addEventListener('DOMContentLoaded', () => {
         // --- Частина 1: Відстеження змін у формах (як і раніше) ---
         const formsToObserve = document.querySelectorAll('.observer-forms form');
-        if(formsToObserve.length === 0) return;
+        if (formsToObserve.length === 0) return;
         const dirtyForms = new Set();
 
         if (formsToObserve.length > 0) {
@@ -172,7 +188,6 @@ function observerFormsInit(){
             alertModal.classList.add('custom-modal-active');
             _$('body').classList.add('open-custom-modal');
         };
-
 
 
         // Обробник для кнопки "Так, покинути"
@@ -212,23 +227,23 @@ function observerFormsInit(){
     });
 }
 
-function tabsLinkListener(){
+function tabsLinkListener() {
     doc.querySelectorAll('.tabs__link').forEach(function (element) {
         element.addEventListener('click', function (e) {
             e.preventDefault();
             const wrapper = element.closest('.tabs');
             const href = element.getAttribute('href');
             if (element.classList.contains('active')) return;
-            if(href === null) return;
-            if(href === undefined) return;
-            if(href === '') return;
-            if(href === '#') return;
+            if (href === null) return;
+            if (href === undefined) return;
+            if (href === '') return;
+            if (href === '#') return;
             const content = doc.querySelector(href);
-            if(content === null) return;
-            doc.querySelectorAll('.tabs__content').forEach(function (contentItem){
+            if (content === null) return;
+            doc.querySelectorAll('.tabs__content').forEach(function (contentItem) {
                 contentItem.classList.remove('active');
             });
-            doc.querySelectorAll('.tabs__link').forEach(function (contentItem){
+            doc.querySelectorAll('.tabs__link').forEach(function (contentItem) {
                 contentItem.classList.remove('active');
             });
             content.classList.add('active');
@@ -343,6 +358,49 @@ function slideLeft(element, duration = 400) {
     }, duration);
 }
 
+function inputCreatorAndRemover() {
+    let clickerCount = 0;
+    let clickerCountMax = 3;
+    doc.querySelectorAll('.add-input-button-js').forEach(function (button) {
+        button.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (clickerCount === (clickerCountMax - 1)) button.classList.add('not-active');
+            if (clickerCount >= clickerCountMax) {
+                console.warn('Too many elements');
+                button.classList.add('not-active');
+                return;
+            }
+            const name = button.getAttribute('data-name');
+            const placeholder = button.getAttribute('data-placeholder');
+            if (!name) {
+                console.error('Set data-name for this button');
+                return;
+            }
+            const deleteButton = document.createElement('button');
+            deleteButton.className = 'delete-input icon delete-input-js';
+            deleteButton.innerHTML = trashIconSvg;
+
+            deleteButton.addEventListener('click', function (e) {
+                e.preventDefault();
+                event.target.closest('.form-label').remove();
+                clickerCount = clickerCount - 1;
+                button.classList.remove('not-active');
+            });
+
+            const labelElement = document.createElement('label');
+            labelElement.className = 'form-label';
+            const inputElement = document.createElement('input');
+            inputElement.setAttribute('name', name + '[]');
+            inputElement.setAttribute('required', 'required');
+            if (placeholder) inputElement.setAttribute('placeholder', placeholder);
+            labelElement.appendChild(deleteButton);
+            labelElement.appendChild(inputElement);
+            button.before(labelElement);
+            clickerCount++;
+        });
+    });
+}
+
 function removeClassFromElements(selector, cssClass) {
     doc.querySelectorAll(selector).forEach(function (element) {
         element.classList.remove(cssClass);
@@ -370,4 +428,50 @@ function getThemeFromHtml() {
 
 function saveThemeInLocalStorage(theme) {
     localStorage.setItem('selectedTheme', theme);
+}
+
+function avatarUploader() {
+    // Знаходимо всі контейнери для завантаження аватара на сторінці
+    const avatarContainers = document.querySelectorAll('.candidate-box-avatar');
+
+    // Проходимося по кожному контейнеру, щоб вони працювали незалежно
+    avatarContainers.forEach(container => {
+        const fileInput = container.querySelector('.upload-avatar-js');
+        const previewElement = container.querySelector('.candidate-box-avatar__image');
+        const emptyStateElement = container.querySelector('.candidate-box-avatar__empty');
+
+        // Перевіряємо, чи всі потрібні елементи існують всередині контейнера
+        if (!fileInput || !previewElement || !emptyStateElement) {
+            console.warn('Один з блоків завантаження аватара має неповну HTML-структуру.');
+            return; // Переходимо до наступного контейнера
+        }
+
+        // Додаємо обробник події 'change' на input
+        fileInput.addEventListener('change', function (event) {
+            // Отримуємо перший вибраний файл
+            const file = event.target.files[0];
+
+            // Перевіряємо, чи файл дійсно вибрано і чи це зображення
+            if (file && file.type.startsWith('image/')) {
+                // FileReader - це стандартний об'єкт для читання файлів
+                const reader = new FileReader();
+
+                // Ця функція виконається, коли файл буде повністю завантажений
+                reader.onload = function (e) {
+                    // e.target.result містить дані зображення у форматі Base64 (data URL)
+                    // Встановлюємо це значення як фон для нашого блоку прев'ю
+                    previewElement.style.backgroundImage = `url('${e.target.result}')`;
+
+                    // Показуємо блок з прев'ю і ховаємо початковий текст
+                    previewElement.classList.remove('hidden');
+                };
+
+                // Запускаємо процес читання файлу
+                reader.readAsDataURL(file);
+            } else {
+                // Якщо користувач вибрав не картинку або скасував вибір
+                console.log('Файл не вибрано або тип файлу не є зображенням.');
+            }
+        });
+    });
 }
